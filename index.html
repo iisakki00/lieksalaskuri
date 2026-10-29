@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10131a"><title>Lieksalaskuri</title>
+<style>
+:root{color-scheme:dark;--bg:#10131a;--panel:#191e29;--panel2:#222938;--line:#343d50;--text:#f3f5f9;--muted:#a9b3c5;--accent:#ed405b;--green:#43d6a0;--gold:#f2c66d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1c2433 0,#10131a 55%);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}main{max-width:1120px;margin:auto;padding:20px 14px 36px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;font-size:24px;font-weight:900}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:800}.top h1{font-size:clamp(22px,4vw,30px);margin:1px 0 0;letter-spacing:-.04em}.panel{background:linear-gradient(160deg,#1b202b,#161a23);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 16px 45px #0002}.panel h2{font-size:18px;margin:0 0 15px}.field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.field label,.label{font-size:13px;color:var(--muted);font-weight:700}.input,select{width:100%;background:#10141c;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;outline:none;min-height:46px}.input:focus,select:focus{border-color:var(--accent)}.players{display:grid;gap:8px}.player-input{display:grid;grid-template-columns:minmax(0,1fr) 105px 44px;gap:8px;align-items:center}.player-input .input{min-width:0}.player-name-wrap{position:relative;min-width:0}.player-name-wrap .player-name{width:100%}.player-name-wrap.is-bot .player-name{padding-right:39px}.bot-name-icon{position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:20px;line-height:1}.bot-edit-icon{pointer-events:auto;cursor:pointer;z-index:2;background:transparent;border:0;padding:5px;border-radius:8px;display:grid;place-items:center;min-width:32px;min-height:32px}.bot-edit-icon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.player-start{width:100%;min-width:0!important;padding:10px 8px!important;font-size:14px!important}.player-start::placeholder{font-size:11px}.num{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;background:var(--panel2);border-radius:9px;color:var(--gold);font-weight:800}.btn{border:0;border-radius:11px;padding:12px 14px;font:inherit;font-weight:800;cursor:pointer;transition:transform .12s;touch-action:manipulation;min-height:44px}.btn:active{transform:scale(.98)}.btn-primary{background:#1d9a62;color:white}.btn-danger{background:#d9384f;color:white}.btn-secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn-quiet{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn:disabled{opacity:.35;cursor:not-allowed}.full{width:100%}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1}.muted{color:var(--muted)}.small{font-size:12px}.layout{display:grid;grid-template-columns:1fr;gap:16px}.hidden{display:none!important}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.notice{margin-top:12px;padding:11px;border-radius:11px;background:#17352d;border:1px solid #28634f;color:#baf5df;font-size:14px}.notice.error{background:#3b2027;border-color:#783343;color:#ffd4dc}.lobby{max-width:720px;margin:0 auto}.lobby-intro{color:var(--muted);margin:-5px 0 17px}.divider{height:1px;background:var(--line);margin:16px 0}.game-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.game-head h2{font-size:21px;margin:0}.status{padding:6px 10px;border-radius:999px;background:#262e3c;color:var(--muted);font-size:11px;font-weight:800;white-space:nowrap}.scoreboard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.player-card{border:1px solid var(--line);background:#151a23;border-radius:15px;padding:16px;position:relative;min-width:0}.player-card.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px #ed405b55}.player-card.active:before{content:"VUOROSSA";position:absolute;right:10px;top:10px;font-size:9px;letter-spacing:.1em;color:var(--accent);font-weight:900}.pname{font-weight:850;padding-right:45px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}.legs{display:none}.entry{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.entry-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.entry-top strong{font-size:14px}.entry-top span{font-size:12px;color:var(--muted)}.score-input-row{display:flex;gap:8px}.score-input-row input{font-size:23px;font-weight:850;text-align:center;min-width:0}.score-input-row .btn{min-width:95px}.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:9px}.quick .btn{padding:9px 3px;font-size:14px;min-height:42px}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}.keypad .btn{font-size:18px;min-height:39px;padding:5px 4px;background:#253f55;border:1px solid #37617d;color:#f4fbff}.keypad .action{font-size:12px}.keypad .remaining-btn{background:#d9384f;border:1px solid #f15a6d;color:white}.keypad .action{background:#30394a;border-color:#46536a}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.average-line{white-space:normal;line-height:1.5}.leg-darts{font-size:11px;color:#8ea6bd;font-weight:800;letter-spacing:.02em;white-space:nowrap}.entry-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.undo-inline{min-height:36px!important;padding:7px 9px!important;font-size:12px!important}.history{margin-top:18px}.history-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.history-head h3{font-size:15px;margin:0}.history-list{display:grid;gap:7px;max-height:250px;overflow:auto}.history-item{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:9px;background:#121720;border:1px solid #293142;border-radius:10px;padding:9px 11px;font-size:13px}.history-round{color:var(--gold);font-weight:800}.history-points{font-weight:850;font-variant-numeric:tabular-nums}.empty{text-align:center;padding:22px 10px;color:var(--muted);font-size:13px}.winner{text-align:center;padding:17px;background:#18362f;border:1px solid #2b6a55;border-radius:14px;margin-bottom:14px}.winner .cup{font-size:30px}.winner h3{margin:5px 0;font-size:22px}.winner p{margin:0;color:#baf5df}.footer{text-align:center;color:#687489;font-size:12px;margin-top:20px}.modal-backdrop{position:fixed;inset:0;background:#05070bdc;display:grid;place-items:center;padding:18px;z-index:10}.modal{width:min(100%,420px);background:#1a202c;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 20px 80px #0008}.modal h2{margin:0 0 7px}.modal p{color:var(--muted);margin:0 0 16px}.dart-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.dart-options .btn{font-size:20px;padding:17px 8px}.end-note{font-size:12px;color:var(--muted);margin-top:9px}
+@media(min-width:850px){.layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.lobby{max-width:800px}.game-layout{grid-template-columns:minmax(0,1fr) 330px}.game-main{min-width:0}.game-side{min-width:0}}
+@media(max-width:500px){main{padding:7px 7px 14px}.top{margin-bottom:8px}.logo{width:34px;height:34px}.top h1{font-size:20px}.panel{padding:10px;border-radius:13px}.game-layout{gap:8px}.game-head{margin-bottom:8px}.game-head h2{font-size:17px}.scoreboard{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.player-card{padding:12px 9px;border-radius:11px}.player-card.active:before{font-size:8px;top:6px;right:6px}.pname{font-size:13px;padding-right:40px}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:10px;flex-direction:column;gap:2px}.quick{grid-template-columns:repeat(6,1fr);gap:4px;margin-top:6px}.quick .btn{min-height:31px;padding:4px 1px;font-size:12px;border-radius:7px}.entry{margin-top:9px;padding-top:9px}.entry-top{margin-bottom:6px}.score-input-row{gap:5px}.score-input-row input{font-size:20px;min-height:39px;padding:6px}.score-input-row .btn{min-width:75px;min-height:39px;padding:6px 9px}.keypad{gap:4px;margin-top:6px}.keypad .btn{min-height:35px;font-size:17px;border-radius:7px}.keypad .action{font-size:11px}.entry-actions{margin-top:4px}.end-note{font-size:10px;margin-top:5px}.settings-grid{grid-template-columns:1fr 1fr}.player-input{grid-template-columns:minmax(0,1fr) 85px 40px;gap:5px}.player-start{font-size:12px!important;padding:8px 5px!important}.num{width:25px;height:25px}.history-list{max-height:150px}.history{margin-top:0}.game-side{padding:10px}.footer{margin-top:8px;font-size:10px}}
+@media(max-width:500px) and (max-height:780px){main{padding-top:4px}.top{margin-bottom:5px}.brand{gap:7px}.eyebrow{font-size:9px}.panel{padding:8px}.player-card{padding:9px 7px}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:9px}.entry{margin-top:6px;padding-top:6px}.quick .btn{min-height:28px;font-size:11px}.keypad .btn{min-height:31px}.score-input-row input,.score-input-row .btn{min-height:35px}.end-note{display:none}}
+.checkout-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}.checkout-btn{background:#167b62;color:#fff;font-size:21px;min-height:47px}.checkout-btn:disabled{background:#353b47;color:#7e8998;opacity:1;cursor:not-allowed}.quick .btn:disabled,.keypad .btn:disabled{background:#343942!important;border-color:#454b55!important;color:#87909c!important;opacity:1}.score-input-row .btn:disabled,.remaining-btn:disabled{opacity:.4}
+
+.quick .btn.bust-quick{background:#8b3243;border-color:#b74758;color:white}
+.result-overlay{position:fixed;inset:0;background:#060a11e8;z-index:40;display:grid;place-items:center;padding:16px}
+.result-dialog{width:min(100%,560px);max-height:90vh;overflow:auto;background:#1b222e;border:1px solid #45516a;border-radius:20px;padding:22px;box-shadow:0 20px 70px #000a}
+.result-dialog h2{text-align:center;margin:0 0 5px;font-size:25px}.result-subtitle{text-align:center;color:#b3c5d8;margin-bottom:16px}
+.result-table{width:100%;border-collapse:collapse;font-size:13px}.result-table th,.result-table td{padding:10px 5px;text-align:left;border-bottom:1px solid #364253}.result-table th:not(:first-child),.result-table td:not(:first-child){text-align:right}.result-table th{color:#b1c1d2;font-size:11px}
+
+.player-card .main-legs{position:absolute;right:12px;top:29px;font-size:21px;font-weight:900;color:#f0c879;line-height:1} .player-card .pname{padding-right:48px} .player-card.active .main-legs{top:29px} @media(max-width:500px){.player-card .main-legs{right:8px;top:26px;font-size:18px}.player-card.active .main-legs{top:26px}}
+/* Set count above the leg counter in full and compact cards */
+.player-card .main-sets{position:absolute;right:12px;top:49px;font-size:30px;font-weight:900;color:var(--gold);line-height:1}
+.player-card:has(.main-sets) .main-legs{top:86px;font-size:17px}
+.player-card .mini-sets{font-size:21px;font-weight:900;color:var(--gold);grid-column:2;grid-row:1;justify-self:end}
+.player-card.mini:has(.mini-sets) .mini-legs{grid-column:2;grid-row:2;justify-self:end;font-size:14px}
+.player-card.mini:has(.mini-sets) .remaining{grid-column:1;grid-row:2}
+@media(max-width:500px){.player-card .main-sets{right:8px;top:42px;font-size:25px}.player-card:has(.main-sets) .main-legs{top:72px}}
+/* Compact multiplayer scoreboard: current thrower left, opponents right */
+.scoreboard.multiplayer{grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);grid-template-rows:repeat(var(--opponents),auto);align-items:stretch;gap:7px}
+.scoreboard.multiplayer .player-card.active{grid-column:1;grid-row:1 / span var(--opponents);display:flex;flex-direction:column;justify-content:center;min-height:180px}
+.scoreboard.multiplayer .player-card.mini{grid-column:2;padding:8px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 7px;min-height:54px}
+.scoreboard.multiplayer .player-card.mini:before{display:none}
+.scoreboard.multiplayer .player-card.mini .pname{font-size:12px;padding:0;grid-column:1;grid-row:1}
+.scoreboard.multiplayer .player-card.mini .remaining{font-size:clamp(22px,6vw,36px);line-height:1.1;margin:0;grid-column:1;grid-row:2}
+.scoreboard.multiplayer .player-card.mini .mini-legs{grid-column:2;grid-row:1 / span 2;font-size:20px;font-weight:900;color:#f0c879;min-width:20px;text-align:right}
+@media(max-width:500px){.scoreboard.multiplayer{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:5px}.scoreboard.multiplayer .player-card.active{min-height:165px}.scoreboard.multiplayer .player-card.active .remaining{font-size:clamp(58px,15vw,85px)}.scoreboard.multiplayer .player-card.mini{padding:6px 7px;min-height:48px}.scoreboard.multiplayer .player-card.mini .pname{font-size:11px}.scoreboard.multiplayer .player-card.mini .remaining{font-size:25px}.scoreboard.multiplayer .player-card.mini .mini-legs{font-size:18px}}
+#resultDetails{overflow-x:auto}#resultDetails .result-table{width:100%;border-collapse:collapse;font-size:12px}#resultDetails th,#resultDetails td{padding:8px 5px;text-align:left;white-space:nowrap;border-bottom:1px solid #30394a}
+.score-edit-trigger{font-size:inherit;line-height:inherit;display:block;width:auto;background:transparent;border:0;color:inherit;font-family:inherit;font-weight:inherit;text-align:left;padding:0;cursor:pointer;touch-action:manipulation}.score-edit-trigger.editing{color:var(--gold);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:7px}.score-edit-trigger:focus-visible{outline:2px solid var(--gold);border-radius:6px}
+
+/* Larger remaining score, with dedicated space for set and leg counters. */
+.scoreboard:not(.multiplayer) .player-card .remaining{font-size:clamp(72px,9vw,112px);line-height:1.03}
+.scoreboard.multiplayer .player-card.active .remaining{font-size:clamp(72px,10vw,112px);line-height:1.03}
+.player-card:has(.main-sets):not(.mini){min-height:195px;padding-top:14px}
+.player-card:has(.main-sets):not(.mini) .remaining{margin-top:68px}
+.player-card:has(.main-sets) .main-sets{top:37px}
+.player-card:has(.main-sets) .main-legs{top:76px}
+@media(max-width:500px){
+ .scoreboard:not(.multiplayer) .player-card .remaining{font-size:clamp(68px,18vw,92px)}
+ .scoreboard.multiplayer .player-card.active .remaining{font-size:clamp(68px,17vw,94px)}
+ .player-card:has(.main-sets):not(.mini){min-height:180px}
+ .player-card:has(.main-sets):not(.mini) .remaining{margin-top:62px}
+ .player-card:has(.main-sets) .main-sets{top:34px}
+ .player-card:has(.main-sets) .main-legs{top:70px}
+}
+/* Set games use the same score-card dimensions as leg games. */
+.player-card:has(.main-sets):not(.mini){min-height:0;padding:16px}
+.player-card:has(.main-sets):not(.mini) .remaining{margin:3px 0 1px}
+.player-card:has(.main-sets) .main-sets{top:26px;right:12px;font-size:25px}
+.player-card:has(.main-sets) .main-legs{top:57px;right:12px;font-size:17px}
+@media(max-width:500px){
+ .player-card:has(.main-sets):not(.mini){min-height:0;padding:12px 9px}
+ .player-card:has(.main-sets) .main-sets{top:23px;right:8px;font-size:22px}
+ .player-card:has(.main-sets) .main-legs{top:49px;right:8px;font-size:15px}
+}
+.set-result-heading th{padding:12px 10px 7px;text-align:left;color:#e7c06a;font-weight:800;background:rgba(231,192,106,.08);border-top:1px solid rgba(231,192,106,.25)}
+
+/* Tablet portrait layout: retain phone and wide-desktop layouts unchanged. */
+@media (min-width: 600px) and (max-width: 1199px) and (orientation: portrait) {
+  main {max-width: 980px; padding: 18px 22px 32px;}
+  .game-layout {grid-template-columns: minmax(0,1fr) !important; gap: 14px;}
+  .game-main,.game-side {min-width: 0; width:100%;}
+  .game-main {padding: 18px 20px;}
+  .game-head {margin-bottom: 14px;}
+  .scoreboard {gap: 12px;}
+  .scoreboard:not(.multiplayer) .player-card {min-height: 170px; padding: 18px 20px;}
+  .scoreboard:not(.multiplayer) .player-card .remaining {font-size: clamp(84px, 12vw, 128px);}
+  .scoreboard.multiplayer {grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); gap: 10px;}
+  .scoreboard.multiplayer .player-card.active {min-height: 215px; padding: 18px 20px;}
+  .scoreboard.multiplayer .player-card.active .remaining {font-size: clamp(84px, 12vw, 126px);}
+  .scoreboard.multiplayer .player-card.mini {min-height: 66px; padding: 11px 15px;}
+  .scoreboard.multiplayer .player-card.mini .pname {font-size: 15px;}
+  .scoreboard.multiplayer .player-card.mini .remaining {font-size: 35px;}
+  .scoreboard.multiplayer .player-card.mini .mini-legs {font-size: 24px;}
+  .scoreboard.multiplayer .player-card.mini .mini-sets {font-size: 24px;}
+  .player-card .pname {font-size: 17px;}
+  .player-card .stats {font-size: 14px;}
+  .entry {margin-top: 18px; padding-top: 16px;}
+  .checkout-actions {gap: 12px; margin-bottom: 12px;}
+  .checkout-btn {min-height: 58px; font-size: 25px;}
+  .score-input-row input {font-size: 28px; min-height: 58px;}
+  .score-input-row .btn {min-height: 58px; min-width: 130px; font-size: 18px;}
+  .quick {grid-template-columns: repeat(6,minmax(0,1fr)); gap: 9px; margin-top: 13px;}
+  .quick .btn {min-height: 54px; font-size: 19px;}
+  .keypad {gap: 9px; margin-top: 12px;}
+  .keypad .btn {min-height: 58px; font-size: 25px;}
+  .keypad .action {font-size: 17px;}
+  .undo-inline {min-height: 48px!important; font-size: 15px!important;}
+  .history-list {max-height: 220px;}
+  .history-item {font-size: 15px;}
+  .lobby {max-width: 780px;}
+}
+.history-list{max-height:420px;overflow:auto}.history-list .visit-scroll{overflow-x:auto}.history-list .leg-score-sheet{min-width:0}
+/* Tablet keypad: backspace above, remaining / zero / done in bottom row */
+.score-input-row #backspaceBtn{min-width:95px;background:#d9384f;color:white}
+.player-card.active{border-color:#1d9a62;box-shadow:inset 0 0 0 1px #1d9a6280;background:linear-gradient(160deg,#17352d,#151a23)}
+.player-card.active:before{color:#43d6a0}
+.keypad #submitScore{background:#1d9a62;border:1px solid #2ab579;color:white}
+@media(max-width:500px){.score-input-row #backspaceBtn{min-width:75px}}
+
+/* Larger leg-win numerals in leg-only matches; set-game counters unchanged. */
+.player-card:not(:has(.main-sets)):not(.mini) .main-legs {font-size:34px;right:12px;top:26px;line-height:1.1}
+@media(max-width:500px){.player-card:not(:has(.main-sets)):not(.mini) .main-legs{font-size:27px;right:8px;top:24px}}
+/* Match backspace to quick-score keys and Jäljellä to Tehty. */
+#backspaceBtn {background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.keypad #remainingBtn {background:#1d9a62;border:1px solid #1d9a62;color:white}
+.order-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.order-player{min-height:62px;white-space:normal;overflow-wrap:anywhere;font-size:17px}
+.order-player.order-selected{opacity:.4}
+.order-choices.two-player-order .order-player{opacity:1;cursor:pointer}
+.order-choices.two-player-order .order-player.order-selected{opacity:1;background:rgba(28,168,100,.40)!important;border-color:rgba(67,226,143,.85)!important;color:#fff!important;box-shadow:inset 0 0 0 1px rgba(67,226,143,.3)}
+body.neutral-colors .order-choices.two-player-order .order-player.order-selected{background:rgba(255,255,255,.22)!important;border-color:rgba(255,255,255,.9)!important;color:#fff!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.order-chosen{min-height:44px;color:var(--gold);font-weight:800;padding:10px 0}
+
+.leg-result-row{cursor:pointer;background:#1b2632}.leg-result-row:focus-visible{outline:2px solid #55d7a2;outline-offset:-2px}.leg-result-row:hover{background:#273647}.leg-chevron{color:#75d9ad;font-weight:900}.leg-visit-detail[hidden]{display:none!important}.leg-visit-detail>td{padding:10px!important;background:#101a24}.leg-detail-inner{padding:6px 4px 10px}.leg-detail-inner>strong{color:#a6e8cc}.visit-scroll{overflow-x:auto;max-width:100%}.visit-columns{width:100%;table-layout:fixed;min-width:280px}.visit-columns td,.visit-columns th{text-align:center;overflow-wrap:anywhere}.visit-columns td strong{font-size:16px}.visit-remaining{display:block;font-size:12px;color:#9baebb;margin-top:3px}.visit-empty{color:#637586}
+.leg-detail-inner .result-table{margin-top:8px}.leg-detail-inner .result-table th,.leg-detail-inner .result-table td{padding:6px 4px!important}
+
+/* Score-sheet inspired by handwritten darts scorecards. */
+.leg-visit-detail>td{padding:10px 8px 20px!important;background:#f6f7f8;color:#1e2428}
+.leg-detail-inner{padding:0}
+.leg-score-sheet{width:100%;border-collapse:collapse;table-layout:fixed;color:#1b2429;background:#fff;font-variant-numeric:tabular-nums}
+.leg-score-sheet th,.leg-score-sheet td{border:0;padding:7px 4px;text-align:center}
+.leg-score-sheet .sheet-player-name{font-size:clamp(13px,2.5vw,22px);font-weight:900;text-transform:uppercase;border-bottom:3px solid #26343a;overflow-wrap:anywhere}
+.leg-score-sheet .sheet-start{font-size:clamp(20px,3.7vw,34px);font-weight:900;text-decoration:underline;padding:10px 3px 6px}
+.leg-score-sheet .sheet-marker{width:25px;padding:0 2px;color:#606b72;font-size:12px}
+.leg-score-sheet .sheet-round-marker{display:inline-block;border-top:1px solid #a7b1b7;padding-top:3px}
+.leg-score-sheet .sheet-score{font-size:clamp(16px,2.8vw,27px);font-weight:500;width:auto}
+.leg-score-sheet .sheet-remaining{font-size:clamp(17px,3.2vw,30px);font-weight:850;border-right:2px solid #bec6cb;width:auto}
+.leg-score-sheet td:last-child.sheet-remaining{border-right:0}
+.leg-score-sheet .sheet-starter-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#ef5350;margin-left:7px;vertical-align:middle;box-shadow:0 0 0 1px #d43e3b}
+.leg-score-sheet .sheet-finish{display:inline-flex;align-items:center;justify-content:center;width:1.25em;height:1.25em;border:2px solid #1b2429;border-radius:50%;font-size:.85em}
+.leg-score-sheet .sheet-total-row td{padding:13px 2px 5px;border-top:2px solid #26343a}
+.leg-score-sheet .sheet-darts{font-size:clamp(16px,2.5vw,23px);font-weight:700;font-style:italic}
+.leg-score-sheet .sheet-no-data{font-size:13px;padding:18px 4px;color:#697782}
+@media(max-width:520px){.leg-score-sheet th,.leg-score-sheet td{padding:6px 1px}.leg-score-sheet .sheet-marker{width:18px;font-size:10px}}
+.game-tools{display:flex;gap:8px;align-items:center}.tool-btn{width:46px;height:46px;padding:8px;display:grid;place-items:center}.tool-modal{width:min(100%,680px);max-height:90dvh;overflow:auto}.tool-modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.tool-modal-head h2{margin:0;font-size:21px}.tool-modal-head .btn{flex:none}.tool-modal .game-side{background:transparent;border:0;box-shadow:none;padding:0}.tool-modal .history-list{max-height:none;overflow:visible}.tool-modal .visit-scroll{overflow-x:auto}.setting-option{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line);font-size:15px}.setting-option input{width:21px;height:21px;accent-color:#1d9a62}.settings-modal{width:min(100%,460px)}
+@media(max-width:500px){.tool-btn{width:41px;height:41px}.tool-modal{padding:14px}.tool-modal-head h2{font-size:18px}.tool-modal-head .btn{padding:8px 10px}}
+/* One switch controls corner rounding throughout the interface. */
+body.square-corners *,body.square-corners *::before,body.square-corners *::after{border-radius:0!important}
+.setting-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.setting-toggle{min-height:55px;color:#fff;border:1px solid transparent;font-size:15px}
+.setting-toggle.setting-enabled{background:#1d9a62;border-color:#2cb47a}
+.setting-toggle.setting-disabled{background:#c73349;border-color:#e34a60}
+/* User-selectable RGB tint for neutral surfaces; scoring red/green remain fixed. */
+body{--theme-bg:#10131a;--theme-top:#1c2433;--theme-panel:#1b202b;--theme-panel-end:#161a23;--theme-card:#151a23;--theme-input:#10141c;--theme-key:#253f55;--theme-key-border:#37617d;--theme-action:#30394a;--theme-action-border:#46536a}
+body{background:radial-gradient(ellipse at top,var(--theme-top) 0,var(--theme-bg) 55%)}
+.panel{background:linear-gradient(160deg,var(--theme-panel),var(--theme-panel-end))}
+.player-card:not(.active){background:var(--theme-card)}
+.input,select{background:var(--theme-input)}
+.keypad .btn:not(.remaining-btn):not(#submitScore):not(.action):not(:disabled){background:var(--theme-key);border-color:var(--theme-key-border)}
+.keypad .action:not(:disabled){background:var(--theme-action);border-color:var(--theme-action-border)}
+/* Checkout keys use the same theme tint as number keys. */
+.checkout-btn:not(:disabled){background:var(--theme-key);border:1px solid var(--theme-key-border);color:#f4fbff}
+.modal,.result-dialog{background:var(--theme-panel)}
+/* Softer theme tint for quick scores, undo and other neutral action buttons. */
+.quick .btn:not(.bust-quick):not(:disabled),
+#undoBtn:not(:disabled),#backspaceBtn:not(:disabled){background:var(--theme-action);border-color:var(--theme-action-border)}
+/* Preserve the fixed green/red semantic buttons and disabled states. */
+.keypad #submitScore:not(:disabled){background:#1d9a62;border-color:#1d9a62}
+.keypad #remainingBtn:not(:disabled){background:#d9384f;border-color:#f15a6d}
+
+.theme-controls{margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+.theme-controls h3{font-size:15px;margin:0 0 5px}
+.theme-controls .theme-row{display:grid;grid-template-columns:18px 1fr 40px;align-items:center;gap:10px;margin:10px 0}
+.theme-row input{width:100%;accent-color:#9da8bb;cursor:pointer}
+.theme-row output{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.theme-preview{height:32px;border:1px solid #ffffff44;border-radius:8px;margin-top:10px}
+
+/* Himmenna vain muiden pelaajien nimi ja pistemäärä, ei koko korttia. */
+.player-card:not(.active) .pname,
+.player-card:not(.active) .remaining {opacity:.70;}
+
+/* Neutral toolbar controls follow the same low-saturation theme as quick scores. */
+#backToLobby:not(:disabled),
+#openSettings:not(:disabled),
+#openEvents:not(:disabled){background:var(--theme-action);border-color:var(--theme-action-border)}
+/* Keep the active player's green outline, but match every player's card fill. */
+.player-card.active{background:var(--theme-card)}
+
+.btn-secondary:not(:disabled),.btn-quiet:not(:disabled){background:var(--theme-action);border:1px solid var(--theme-action-border);color:var(--text)}
+.tie-low{color:#f04459!important} .player-card.mini .leg-darts{font-size:11px} .tie-low{font-weight:900!important}
+
+/* Compact checkout controls use the softer quick-key theme. */
+.checkout-actions .checkout-btn{min-height:34px;padding:4px 8px;font-size:17px;background:var(--theme-action);border:1px solid var(--theme-action-border)}
+.checkout-actions .checkout-btn:not(:disabled){background:var(--theme-action);border-color:var(--theme-action-border);color:var(--text)}
+@media (min-width:501px){.checkout-actions .checkout-btn{min-height:38px;padding:5px 8px;font-size:18px}}
+@media (max-width:500px){.checkout-actions .checkout-btn{min-height:31px;padding:3px 6px;font-size:16px}}
+.scoreboard:has(> .player-card:only-child){grid-template-columns:minmax(0,1fr)}
+/* Red backspace button during score entry. */
+#backspaceBtn:not(:disabled){background:#d9384f;border-color:#f15a6d;color:#fff}
+.remove-player{padding:5px!important;min-height:42px!important;font-weight:900}
+
+/* Lobby settings control and muted action backgrounds. */
+.lobby-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.lobby-heading .tool-btn{flex:0 0 46px;background:var(--theme-action);border:1px solid var(--theme-action-border)}
+.quick .btn.bust-quick:not(:disabled){background:var(--theme-action);border-color:var(--theme-action-border);color:var(--text)}
+#submitScore:not(:disabled),#remainingBtn:not(:disabled),.checkout-actions .checkout-btn:not(:disabled){background:rgba(29,154,98,.25);border-color:rgba(29,154,98,.5);color:#fff}
+#backspaceBtn:not(:disabled){background:rgba(217,56,79,.25);border-color:rgba(217,56,79,.5);color:#fff}
+/* Yhtenäinen 25 % vihreä tausta Jäljellä-, Tehty- ja katkonapeille. */
+.keypad #remainingBtn:not(:disabled),
+.keypad #submitScore:not(:disabled),
+.checkout-actions .checkout-btn:not(:disabled){
+  background:rgba(29,154,98,.25)!important;
+  border:1px solid rgba(29,154,98,.5)!important;
+  color:#fff!important;
+}
+/* Disabled quick scores retain a subtle hint of the selected RGB theme. */
+.quick .btn:disabled{
+  background:var(--theme-quick-disabled)!important;
+  border-color:var(--theme-quick-disabled-border)!important;
+  color:#9298a5!important;
+  opacity:1!important;
+}
+
+/* Quick-score keys: active near numeric keypad tint; disabled more translucent. */
+.quick .btn:not(:disabled):not(.bust-quick){
+  background:transparent!important;
+  border-color:color-mix(in srgb,var(--theme-key-border) 70%,transparent)!important;
+}
+.quick .btn:disabled{
+  background:color-mix(in srgb,var(--theme-quick-disabled) 42%,transparent)!important;
+  border-color:color-mix(in srgb,var(--theme-quick-disabled-border) 40%,transparent)!important;
+  color:#9298a5!important;opacity:1!important;
+}
+
+/* Optional neutral semantic colors: 5% white backgrounds, fully readable text. */
+body.neutral-colors .btn-primary:not(:disabled),
+body.neutral-colors .btn-danger:not(:disabled),
+body.neutral-colors #remainingBtn:not(:disabled),
+body.neutral-colors #submitScore:not(:disabled),
+body.neutral-colors #backspaceBtn:not(:disabled),
+body.neutral-colors .checkout-actions .checkout-btn:not(:disabled),
+body.neutral-colors .setting-toggle.setting-enabled,
+body.neutral-colors .setting-toggle.setting-disabled {
+ background:rgba(255,255,255,.05)!important;
+ border:1px solid rgba(255,255,255,.28)!important;
+ color:#fff!important;
+}
+/* Neutral mode also covers disabled/temporarily locked confirmation buttons.
+   Keep the native disabled opacity so their unavailable state remains visible. */
+body.neutral-colors #confirmLegBtn,
+body.neutral-colors #confirmOrder,
+body.neutral-colors #confirmLegBtn:disabled,
+body.neutral-colors #confirmOrder:disabled {
+ background:rgba(255,255,255,.05)!important;
+ border:1px solid rgba(255,255,255,.28)!important;
+ color:#fff!important;
+}
+/* Keep Backspace neutral even while temporarily disabled during the 1-second cooldown. */
+body.neutral-colors #backspaceBtn:disabled {
+ background:rgba(255,255,255,.05)!important;
+ border:1px solid rgba(255,255,255,.28)!important;
+ color:#fff!important;
+}
+body.neutral-colors .player-card.active {
+ background:linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.05)),var(--theme-card)!important;
+ border-color:#fff!important;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)!important;
+}
+body.neutral-colors .player-card.active:before{color:#fff!important}
+body.neutral-colors .setting-toggle.setting-enabled{border-color:#fff!important}
+body.neutral-colors .setting-toggle.setting-disabled{border-color:rgba(255,255,255,.18)!important}
+
+/* Match summary and live events share the selected RGB theme. */
+.leg-results-table .leg-result-row,
+.leg-results-table .leg-result-row:hover{background:var(--theme-panel)!important;color:var(--text)}
+.leg-results-table .leg-result-row:hover{background:var(--theme-panel-end)!important}
+.leg-results-table .leg-visit-detail>td{background:var(--theme-panel)!important;color:var(--text)!important}
+.leg-results-table .leg-detail-inner,
+.leg-results-table .visit-scroll{background:transparent}
+.leg-score-sheet{background:var(--theme-panel)!important;color:#fff!important}
+.leg-score-sheet th,.leg-score-sheet td{color:#fff}
+.leg-score-sheet .sheet-player-name{border-bottom-color:rgba(255,255,255,.35)}
+.leg-score-sheet .sheet-remaining{border-right-color:rgba(255,255,255,.25)}
+.leg-score-sheet .sheet-total-row td{border-top-color:rgba(255,255,255,.35)}
+.leg-score-sheet .sheet-finish{border-color:#fff}
+.leg-score-sheet .sheet-marker,.leg-score-sheet .sheet-no-data{color:rgba(255,255,255,.75)}
+.leg-score-sheet .sheet-round-marker{border-top-color:rgba(255,255,255,.3)}
+
+
+/* Score sheets in live events and match-end leg details: white paper, black text. */
+.leg-results-table .leg-visit-detail>td{background:#fff!important;color:#171b20!important}
+.leg-results-table .leg-detail-inner,.leg-results-table .visit-scroll{background:#fff!important}
+.leg-score-sheet{background:#fff!important;color:#171b20!important}
+.leg-score-sheet th,.leg-score-sheet td{color:#171b20!important}
+.leg-score-sheet .sheet-player-name{border-bottom-color:#26343a!important}
+.leg-score-sheet .sheet-remaining{border-right-color:#bec6cb!important}
+.leg-score-sheet .sheet-total-row td{border-top-color:#26343a!important}
+.leg-score-sheet .sheet-finish{border-color:#171b20!important}
+.leg-score-sheet .sheet-marker,.leg-score-sheet .sheet-no-data{color:#606b72!important}
+.leg-score-sheet .sheet-round-marker{border-top-color:#a7b1b7!important}
+
+.events-navigation{display:flex;align-items:center;justify-content:center;gap:15px;margin-bottom:10px}.events-navigation #historyCount{flex:1;text-align:center;font-weight:750;font-size:14px}.events-arrow{min-width:46px;min-height:40px;padding:6px 12px}
+
+/* Vuoron syöttö: Jäljellä | Vuoron pisteet | Tehty; numeronäppäimistön alaosa: Kumoa | 0 | Pyyhi. */
+.score-input-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:6px;align-items:stretch}
+.score-input-row .btn{min-width:0!important;padding:6px 5px;font-size:clamp(11px,1.7vw,16px);white-space:nowrap}
+.score-input-row input{width:100%;min-width:0;padding-left:4px;padding-right:4px}
+.keypad #undoBtn{min-width:0;min-height:39px!important;padding:5px 3px!important;font-size:clamp(10px,1.6vw,14px)!important;white-space:nowrap}
+.keypad #backspaceBtn{min-width:0;min-height:39px;font-size:20px}
+@media(max-width:500px){.score-input-row{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr) minmax(0,1fr);gap:4px}.score-input-row .btn{font-size:11px;padding:4px 2px}.score-input-row input{font-size:16px}.keypad #undoBtn{font-size:10px!important;min-height:35px!important}}
+/* Heittovuorossa olevan pelaajan kortin vasemman yläkulman pehmeä tunniste. */
+.player-card.active{isolation:isolate;overflow:hidden}
+.player-card.active::after{content:"";position:absolute;left:0;top:0;width:78%;height:100%;pointer-events:none;z-index:-1;background:linear-gradient(90deg,rgba(38,211,129,.30) 0%,rgba(38,211,129,.17) 35%,rgba(38,211,129,0) 100%);border-radius:0}
+body.neutral-colors .player-card.active::after{background:linear-gradient(90deg,rgba(255,255,255,.27) 0%,rgba(255,255,255,.14) 35%,rgba(255,255,255,0) 100%)}
+
+/* Aula-painike saa tekstinsä vaatiman leveyden myös kapealla näytöllä. */
+#game #backToLobby {width:auto;min-width:83px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;box-sizing:border-box;}
+#game #backToLobby.hidden {display:none;}
+
+/* Koko mobiilinäytön korkuinen pelinäkymä ja suuret kosketuspainikkeet. */
+@media (max-width: 599px) {
+  body:has(#game:not(.hidden)) {min-height:100dvh;}
+  body:has(#game:not(.hidden)) main {padding:0 5px 5px;max-width:none;min-height:100dvh;}
+  #game:not(.hidden), #game:not(.hidden) .game-layout,
+  #game:not(.hidden) .game-main {min-height:calc(100dvh - 5px);}
+  #game .game-main {display:flex;flex-direction:column;padding:8px 8px 7px;}
+  #game .game-head {flex:0 0 auto;margin-bottom:7px;align-items:center;}
+  #game .game-tools {display:flex;align-items:center;gap:5px;}
+  #game #backToLobby {font-size:12px;padding:7px 9px;min-height:40px;white-space:nowrap;}
+  #game .scoreboard {flex:0 0 auto;}
+  #game .entry {display:flex;flex-direction:column;flex:1 0 auto;min-height:0;margin-top:8px;padding-top:8px;}
+  #game .checkout-actions {flex:0 0 auto;margin-bottom:7px;gap:5px;}
+  #game .checkout-btn {min-height:44px;}
+  #game .score-input-row {flex:0 0 auto;}
+  #game .score-input-row .btn,#game .score-input-row input {min-height:44px;}
+  #game .quick {flex:1 0 auto;grid-template-rows:repeat(2,minmax(43px,1fr));gap:5px;margin-top:7px;}
+  #game .quick .btn {height:100%;min-height:43px;font-size:clamp(13px,3.7vw,18px);}
+  #game .keypad {flex:2 0 auto;grid-template-rows:repeat(4,minmax(47px,1fr));gap:5px;margin-top:7px;}
+  #game .keypad .btn {height:100%;min-height:47px!important;font-size:clamp(20px,5vw,27px);padding:4px;}
+  #game .keypad #undoBtn {font-size:clamp(10px,2.6vw,13px)!important;min-height:47px!important;}
+  #game .end-note {display:none;}
+  #game .quick.hidden {display:none!important;}
+  #game .quick.hidden + .keypad {flex:1 0 auto;}
+}
+@media (min-width:600px) and (max-width:1199px) and (orientation:portrait) {
+  #game .quick .btn {min-height:65px;}
+  #game .keypad .btn {min-height:72px;}
+}
+
+/* Tulosnäppäinten yhtenäinen väritys sekä hieman voimakkaampi vihreä korostus. */
+#game .keypad #undoBtn:not(:disabled),
+#game .keypad #backspaceBtn:not(:disabled){
+  background:transparent!important;
+  border:1px solid color-mix(in srgb,var(--theme-key-border) 70%,transparent)!important;
+  color:var(--text)!important;
+}
+#game #remainingBtn:not(:disabled),
+#game #submitScore:not(:disabled),
+#game .checkout-actions .checkout-btn:not(:disabled){
+  background:rgba(29,154,98,.34)!important;
+  border:1px solid rgba(29,154,98,.58)!important;
+  color:#fff!important;
+}
+body.neutral-colors #game #remainingBtn:not(:disabled),
+body.neutral-colors #game #submitScore:not(:disabled),
+body.neutral-colors #game .checkout-actions .checkout-btn:not(:disabled){
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.32)!important;
+}
+
+/* Neutraalit värit myös kirjauksen jälkeisen cooldownin aikana.
+   Disabled-painikkeet eivät saa palautua vihreään oletusväriin. */
+body.neutral-colors #game #remainingBtn:disabled,
+body.neutral-colors #game #submitScore:disabled,
+body.neutral-colors #game .checkout-actions .checkout-btn:disabled{
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.32)!important;
+  color:#fff!important;
+}
+
+/* Tiivis asetusvalikko: kaikki valinnat näkyviin pienelläkin mobiilinäytöllä. */
+#settingsModal{padding:6px;align-items:center}
+#settingsModal .settings-modal{width:min(100%,460px);max-height:calc(100dvh - 12px);overflow-y:auto;overscroll-behavior:contain;padding:12px 14px;border-radius:13px}
+#settingsModal .tool-modal-head{margin-bottom:5px;gap:7px}
+#settingsModal .tool-modal-head h2{font-size:17px}
+#settingsModal .tool-modal-head .btn{min-height:31px;padding:4px 9px;font-size:12px}
+#settingsModal p.muted.small{margin:0 0 4px;font-size:11px}
+#settingsModal .setting-buttons{gap:5px;margin-top:5px}
+#settingsModal .setting-toggle{min-height:34px;padding:5px 5px;font-size:12px;line-height:1.15;border-radius:7px}
+#settingsModal .score-display-controls{margin-top:9px!important;padding-top:7px!important}
+#settingsModal .score-display-controls h3,#settingsModal .theme-controls h3{font-size:13px;margin:0 0 2px}
+#settingsModal .score-display-controls .muted.small,#settingsModal .theme-controls .muted.small{font-size:10px;line-height:1.2}
+#settingsModal .score-display-controls .setting-buttons{margin-top:6px!important}
+#settingsModal .theme-controls{margin-top:9px;padding-top:7px}
+#settingsModal .theme-controls .theme-row{margin:3px 0;gap:6px;grid-template-columns:13px 1fr 30px;font-size:12px;min-height:25px}
+#settingsModal .theme-row input{margin:0;height:18px}
+#settingsModal #resetTheme{margin-top:5px!important;min-height:32px;padding:5px 8px;font-size:12px}
+@media(max-height:580px){#settingsModal .settings-modal{padding:8px 10px}#settingsModal .setting-toggle{min-height:29px;padding:3px;font-size:11px}#settingsModal .theme-controls .theme-row{min-height:21px;margin:1px 0}}
+
+.lobby-check{display:flex;align-items:center;gap:7px;font-size:12px!important;font-weight:600!important;padding:7px 5px;border:1px solid var(--line);border-radius:8px;min-height:38px}
+.lobby-check input{width:17px;height:17px;accent-color:#1d9a62;flex-shrink:0}
+.sudden-death-row{display:flex;align-items:stretch;gap:6px}.sudden-death-row .lobby-check{flex:1;min-width:0}.sudden-death-info{flex:0 0 38px;min-width:38px;min-height:38px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;font-size:19px;font-weight:800;cursor:pointer}.sudden-death-info:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Aula: aloitustapa ja ratkaisusäännöt samaa pintaa kuin Lisää botti -painike. */
+#lobby #startMode,
+#lobby .lobby-check,
+#lobby .sudden-death-info {
+  background:var(--theme-action);
+  border:1px solid var(--theme-action-border);
+  border-radius:11px;
+  color:var(--text);
+  min-height:44px;
+}
+#lobby .lobby-check {padding:10px 12px;cursor:pointer;font-weight:800!important;}
+#lobby .sudden-death-info {flex-basis:44px;min-width:44px;}
+#lobby #startMode {font-weight:800;cursor:pointer;}
+#lobby .lobby-check:focus-within,
+#lobby #startMode:focus-visible,
+#lobby .sudden-death-info:focus-visible {outline:2px solid var(--green);outline-offset:2px;}
+</style>
+</head>
+<body><main>
+
+
+<section id="lobby" class="panel lobby">
+  <div class="lobby-heading"><div><div class="eyebrow">Lieksalaskuri</div><h2 style="font-size:25px;margin:3px 0 8px">Ottelun aula</h2></div><button type="button" class="btn btn-secondary tool-btn" id="openLobbySettings" aria-label="Asetukset" title="Asetukset"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.86 1.86-.06-.06A1.7 1.7 0 0 0 16 18.4a1.7 1.7 0 0 0-1 .94V20h-2.6v-.66a1.7 1.7 0 0 0-1-.94 1.7 1.7 0 0 0-1.88.34l-.06.06-1.86-1.86.06-.06A1.7 1.7 0 0 0 8 15a1.7 1.7 0 0 0-.94-1H6.4v-2.6h.66a1.7 1.7 0 0 0 .94-1 1.7 1.7 0 0 0-.34-1.88L7.6 8.46 9.46 6.6l.06.06A1.7 1.7 0 0 0 11.4 7a1.7 1.7 0 0 0 1-.94V5.4H15v.66a1.7 1.7 0 0 0 1 .94 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.86 1.86-.06.06A1.7 1.7 0 0 0 19.4 10.4a1.7 1.7 0 0 0 .94 1H21v2.6h-.66a1.7 1.7 0 0 0-.94 1Z" transform="translate(-1.2 -0.7)"/></svg></button></div>
+  <p class="lobby-intro">Valitse pelaajat ja peliasetukset. Voit antaa jokaiselle pelaajalle oman aloituspistemäärän tasoitusta varten; tyhjä kenttä käyttää yleistä aloituspistemäärää.</p>
+  <div class="field"><label>Pelaajat</label><div class="players" id="playerInputs"></div><div style="display:flex;gap:10px;margin-top:10px"><button class="btn btn-secondary" type="button" id="addBotBtn" style="flex:1;min-width:0">Lisää botti</button><button class="btn btn-secondary" type="button" id="addPlayerBtn" style="flex:1;min-width:0">Lisää pelaaja</button></div></div>
+  <div class="settings-grid">
+    
+    <div class="field"><label for="startScore">Aloituspisteet</label><input class="input" id="startScore" type="number" inputmode="numeric" min="2" max="100000" step="1" placeholder="501"></div>
+    <div class="field"><label for="startMode">Aloitustapa</label><select id="startMode" class="input"><option value="straight">Suora aloitus</option><option value="double">Tupla-aloitus</option></select></div>
+  </div>
+  <div class="settings-grid">
+    <div class="field"><label for="length">Legivoitot / setti (tai ottelu)</label><input class="input" id="length" type="number" min="1" max="99" placeholder="3" inputmode="numeric"></div>
+    <div class="field"><label for="setsToWin">Settejä voittoon (0 = ei settejä)</label><input class="input" id="setsToWin" type="number" min="0" max="99" placeholder="0" inputmode="numeric"></div>
+  </div>
+  <div class="settings-grid">
+    <div class="field"><label>Erän ratkaisusäännöt</label><label class="lobby-check"><input id="winByTwo" type="checkbox"> Voitto vähintään 2 legin erolla</label><div class="sudden-death-row"><label class="lobby-check"><input id="suddenDeath" type="checkbox"> Äkkikuolema</label><button type="button" id="suddenDeathInfo" class="sudden-death-info" aria-label="Tietoa äkkikuolemasta" title="Tietoa äkkikuolemasta">ⓘ</button></div></div>
+    <div class="field"><label for="tieBreakDarts">Tie-break</label><input class="input" id="tieBreakDarts" type="text" placeholder="0d" inputmode="numeric"></div>
+  </div>
+  <p class="muted small">Pelaajan edellistä heittovuoroa voi muokata ottelun aikana painamalla pelaajan jäljellä olevaa pistemäärää.</p>
+  <button class="btn btn-secondary full hidden" id="resumeMatch" type="button" style="margin-bottom:10px">Jatka peliä</button>
+  <button class="btn btn-primary full" id="startMatch">Aloita ottelu →</button>
+  <div id="lobbyNotice" class="notice hidden"></div>
+</section>
+
+<section id="game" class="hidden">
+  <div class="layout game-layout">
+    <div class="panel game-main">
+      <div class="game-head"><div><h2 id="matchTitle">501 · X01</h2></div><div class="game-tools"><button type="button" class="btn btn-secondary tool-btn" id="openSettings" aria-label="Asetukset" title="Asetukset"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.86 1.86-.06-.06A1.7 1.7 0 0 0 16 18.4a1.7 1.7 0 0 0-1 .94V20h-2.6v-.66a1.7 1.7 0 0 0-1-.94 1.7 1.7 0 0 0-1.88.34l-.06.06-1.86-1.86.06-.06A1.7 1.7 0 0 0 8 15a1.7 1.7 0 0 0-.94-1H6.4v-2.6h.66a1.7 1.7 0 0 0 .94-1 1.7 1.7 0 0 0-.34-1.88L7.6 8.46 9.46 6.6l.06.06A1.7 1.7 0 0 0 11.4 7a1.7 1.7 0 0 0 1-.94V5.4H15v.66a1.7 1.7 0 0 0 1 .94 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.86 1.86-.06.06A1.7 1.7 0 0 0 19.4 10.4a1.7 1.7 0 0 0 .94 1H21v2.6h-.66a1.7 1.7 0 0 0-.94 1Z" transform="translate(-1.2 -0.7)"/></svg></button><button type="button" class="btn btn-secondary tool-btn" id="openEvents" aria-label="Ottelun tapahtumat" title="Ottelun tapahtumat"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></button><button class="btn btn-secondary tool-btn hidden" id="backToLobby" type="button" aria-label="Takaisin aulaan" title="Aula">← Aula</button></div></div>
+      <div id="winnerBox" class="winner hidden"></div>
+      <div class="scoreboard" id="scoreboard"></div>
+      
+      <div class="entry">
+        <div class="checkout-actions" id="checkoutActions" aria-label="Katkaise erä"><button class="btn checkout-btn" data-checkout-darts="1" disabled>I</button><button class="btn checkout-btn" data-checkout-darts="2" disabled>II</button><button class="btn checkout-btn" data-checkout-darts="3" disabled>III</button></div><button type="button" id="confirmLegBtn" class="btn btn-primary full hidden" style="margin-bottom:10px;min-height:54px;font-size:20px">Vahvista erä</button>
+        
+        <div class="score-input-row"><button class="btn btn-primary remaining-btn action" id="remainingBtn">Jäljellä</button><input class="input" id="scoreInput" type="text" inputmode="none" autocomplete="off" placeholder="Vuoron pisteet" aria-label="Vuoron pisteet"><button class="btn btn-primary action" id="submitScore">Tehty</button></div>
+        <div id="tieInlineMessage" class="hidden" style="margin:7px 0;text-align:center;font-weight:700"></div>
+        <div class="quick" id="quickScores">
+          <button class="btn btn-secondary" data-score="26">26</button><button class="btn btn-secondary" data-score="30">30</button><button class="btn btn-secondary" data-score="41">41</button><button class="btn btn-secondary" data-score="45">45</button><button class="btn btn-secondary" data-score="57">57</button><button class="btn btn-secondary" data-score="60">60</button><button class="btn btn-secondary" data-score="81">81</button><button class="btn btn-secondary" data-score="85">85</button><button class="btn btn-secondary" data-score="95">95</button><button class="btn btn-secondary" data-score="100">100</button><button class="btn btn-secondary" data-score="140">140</button><button class="btn btn-secondary" data-score="180">180</button>
+        </div>
+        <div class="keypad" id="keypad">
+          <button class="btn btn-secondary" data-key="1">1</button><button class="btn btn-secondary" data-key="2">2</button><button class="btn btn-secondary" data-key="3">3</button>
+          <button class="btn btn-secondary" data-key="4">4</button><button class="btn btn-secondary" data-key="5">5</button><button class="btn btn-secondary" data-key="6">6</button>
+          <button class="btn btn-secondary" data-key="7">7</button><button class="btn btn-secondary" data-key="8">8</button><button class="btn btn-secondary" data-key="9">9</button>
+          <button class="btn btn-secondary undo-inline" id="undoBtn" disabled>↶ Kumoa vuoro</button><button class="btn btn-secondary" data-key="0">0</button><button class="btn btn-secondary" id="backspaceBtn" type="button" aria-label="Poista viimeinen numero">⌫</button>
+        </div>
+        
+        <div class="end-note">Pikanapit ja numeronäppäimistö toimivat kosketusnäytöillä. Syötä vuoron pisteet tai jäljellä oleva pistemäärä.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="modal-backdrop hidden" id="eventsModal" role="dialog" aria-modal="true" aria-labelledby="eventsTitle"><div class="modal tool-modal"><div class="tool-modal-head"><h2 id="eventsTitle">Ottelun tapahtumat</h2><button class="btn btn-secondary" id="closeEvents" type="button">Sulje ✕</button></div>    <aside class="panel game-side">
+      <div class="history-head events-navigation"><button type="button" class="btn btn-secondary events-arrow" id="eventsPrev" aria-label="Edellinen erä" title="Edellinen erä">❮</button><span class="muted small" id="historyCount">Erä 1</span><button type="button" class="btn btn-secondary events-arrow" id="eventsNext" aria-label="Seuraava erä" title="Seuraava erä">❯</button></div>
+      <div class="history-list" id="historyList"><div class="empty">Ottelun tapahtumat näkyvät tässä.</div></div>
+    </aside>
+</div></div>
+<div class="modal-backdrop hidden" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="modal tool-modal settings-modal"><div class="tool-modal-head"><h2 id="settingsTitle">Asetukset</h2><button class="btn btn-secondary" id="closeSettings" type="button">Sulje ✕</button></div><p class="muted small">Ottelunäkymän asetukset</p><div class="setting-buttons"><button class="btn setting-toggle" id="showQuickScores" type="button" aria-pressed="true">Pikanäppäimet</button><button class="btn setting-toggle" id="roundedCorners" type="button" aria-pressed="true">Pyöristys</button><button class="btn setting-toggle" id="neutralColors" type="button" aria-pressed="false">Neutraalit värit</button></div><section class="score-display-controls" style="margin-top:20px;padding-top:12px;border-top:1px solid var(--line)"><h3>Tulosikkunan muokkaus</h3><div class="muted small">Valitse, mitkä tilastot näkyvät pelaajan pistemäärän alla.</div><div class="setting-buttons" style="margin-top:12px"><button class="btn setting-toggle" id="statLegDarts" type="button" aria-pressed="true">Erän tikkamäärä</button><button class="btn setting-toggle" id="statPrevious" type="button" aria-pressed="true">Edellinen tulos</button><button class="btn setting-toggle" id="statMatchAvg" type="button" aria-pressed="true">Ottelun keskiarvo</button><button class="btn setting-toggle" id="statFirst9" type="button" aria-pressed="false">Ens. 9 tikan ka</button><button class="btn setting-toggle" id="statLegAvg" type="button" aria-pressed="false">Erän keskiarvo</button></div></section><section class="theme-controls"><h3>Teemaväri (RGB)</h3><div class="muted small">Säädä sovelluksen taustojen ja näppäinten sävyä.</div><div class="theme-row"><label for="themeR">R</label><input type="range" id="themeR" min="0" max="255" value="37"><output id="themeRValue">37</output></div><div class="theme-row"><label for="themeG">G</label><input type="range" id="themeG" min="0" max="255" value="63"><output id="themeGValue">63</output></div><div class="theme-row"><label for="themeB">B</label><input type="range" id="themeB" min="0" max="255" value="85"><output id="themeBValue">85</output></div><button class="btn btn-secondary full" type="button" id="resetTheme" style="margin-top:12px">Palauta oletusväri</button></section></div></div>
+<div class="modal-backdrop hidden" id="botModal" role="dialog" aria-modal="true" aria-labelledby="botTitle"><div class="modal settings-modal"><h2 id="botTitle">Tietokonevastustaja</h2><p class="muted small">Valitse Kisailu.netin tasoitusta vastaava vaikeustaso (350–1000).</p><label for="botHandicap">Tasoitus: <strong id="botHandicapLabel">600</strong></label><input id="botHandicap" type="range" min="350" max="1000" step="1" value="600" style="width:100%;margin:20px 0"><p>Arvioitu 3 tikan keskiarvo: <strong id="botAverage">53,89</strong></p><div class="setting-buttons"><button class="btn btn-secondary" id="cancelBot" type="button">Peruuta</button><button class="btn btn-primary" id="confirmBot" type="button">Lisää botti</button></div></div></div>
+<div class="modal-backdrop hidden" id="suddenDeathInfoModal" role="dialog" aria-modal="true" aria-labelledby="suddenDeathInfoTitle"><div class="modal"><h2 id="suddenDeathInfoTitle">Äkkikuolema</h2><p>Kun ottelu pitää voittaa vähintään kahden legin erolla, peli jatkuu tasatilanteessa normaalin voittorajan yli. Jos eroa ei synny viiden lisäerän aikana, pelataan vielä yksi ratkaiseva legi.</p><p>Esimerkiksi First to 3 -ottelussa tilanteen 5–5 jälkeen pelataan ratkaiseva legi. Siinä tie-breakin tikkarajaa ei käytetä, vaan legi pelataan katkoon asti.</p><p>Settiottelussa sääntöä sovelletaan viimeiseen mahdolliseen settiin.</p><button type="button" class="btn btn-secondary full" id="closeSuddenDeathInfo">Sulje</button></div></div>
+<div class="modal-backdrop hidden" id="tieBreakModal" role="dialog" aria-modal="true" aria-labelledby="tieBreakTitle"><div class="modal"><h2 id="tieBreakTitle">Tie-break</h2><p>Valitse erän voittaja</p><div id="tieBreakChoices" style="display:grid;gap:10px"></div></div></div>
+<div class="modal-backdrop hidden" id="orderConfirm" role="dialog" aria-modal="true" aria-labelledby="orderTitle"><div class="modal"><h2 id="orderTitle">Valitse heittojärjestys</h2><p>Valitse ensimmäisen legin heittojärjestys. Aloittaja vaihtuu jokaisen legin jälkeen.</p><div id="orderRows" style="display:grid;gap:10px;margin:14px 0"></div><div id="orderError" class="notice hidden"></div><div class="row"><button type="button" class="btn btn-secondary" id="cancelOrder">Peruuta</button><button type="button" class="btn btn-primary" id="confirmOrder">Aloita ottelu</button></div></div></div>
+<div class="modal-backdrop hidden" id="leaveConfirm" role="dialog" aria-modal="true" aria-labelledby="leaveConfirmTitle"><div class="modal"><h2 id="leaveConfirmTitle">Poistutaanko kirjauksesta?</h2><p>Haluatko varmasti poistua kirjauksesta ja palata aulaan?</p><div class="row"><button type="button" class="btn btn-secondary" id="cancelLeave">Jatka peliä</button><button type="button" class="btn btn-danger" id="confirmLeave">Poistu aulaan</button></div></div></div>
+<div class="result-overlay hidden" id="resultOverlay" role="dialog" aria-modal="true" aria-labelledby="resultTitle"><div class="result-dialog"><h2 id="resultTitle">🏆 Ottelu päättyi</h2><div class="result-subtitle" id="resultSubtitle"></div><div id="resultDetails"></div><div class="row" style="margin-top:18px"><button class="btn btn-secondary" id="closeResults">Sulje</button><button class="btn btn-primary" id="resultsLobby">Takaisin aulaan</button></div></div></div>
+<div class="footer">Lieksalaskuri · Ottelu säilyy tämän välilehden uudelleenlatauksessa.</div>
+</main>
+
+
+<script>
+(() => {
+const $=id=>document.getElementById(id);
+const defaultNames=Array.from({length:10},(_,i)=>`Pelaaja ${i+1}`);
+let matchPausedInLobby=false;
+let lobbyPlayers=[{name:'',start:''}],botTimer=null;
+let state=null, history=[], undoStack=[], pendingFinish=null, noticeTimer=null, inputLockedUntil=0, inputLockTimer=null, resultsDismissed=false, editPlayerIndex=null;
+const scoringDarts=[...new Set([0,...Array.from({length:20},(_,i)=>i+1),...Array.from({length:20},(_,i)=>(i+1)*2),...Array.from({length:20},(_,i)=>(i+1)*3),25,50])];
+const finishingDarts=[...Array.from({length:20},(_,i)=>(i+1)*2),50];
+function checkoutPossible(remaining,darts){
+ if(!Number.isInteger(remaining)||remaining<=0||darts<1||darts>3)return false;
+ const finish=state.checkout==='double'?finishingDarts:scoringDarts;
+ if(darts===1)return finish.includes(remaining);
+ if(darts===2)return scoringDarts.some(a=>finish.includes(remaining-a));
+ return scoringDarts.some(a=>scoringDarts.some(b=>finish.includes(remaining-a-b)));
+}
+function awaitingLeg(){return !!state?.pendingLegConfirmation;}
+function inputLocked(){return Date.now()<inputLockedUntil;}
+function lockInputs(){inputLockedUntil=Date.now()+1000;clearTimeout(inputLockTimer);render();inputLockTimer=setTimeout(()=>render(),1020);}
+function checkoutWithButton(darts){
+ if(botTurnBlocked())return;
+ if(!state||finished()||inputLocked()||editPlayerIndex!==null||awaitingLeg())return;
+ const p=activePlayer();if(state.startMode==='double'&&!p.opened&&!doubleOpeningScores.has(p.remaining))return;if(!checkoutPossible(p.remaining,darts))return;
+ if(state.startMode==='double'&&!p.opened)p.opened=true;pendingFinish={playerIndex:state.current,score:p.remaining,before:p.remaining,after:0};completeCheckout(darts);
+}
+
+function botAverage(h){return h*45/501;}
+let editingBotIndex=null;
+function updateBotSlider(){const h=Number($('botHandicap').value);$('botHandicapLabel').textContent=h;$('botAverage').textContent=botAverage(h).toFixed(2).replace('.',',');}
+function syncLobbyPlayers(){
+ const rows=[...$('playerInputs').querySelectorAll('.player-input')];
+ rows.forEach((row,i)=>{if(lobbyPlayers[i]){lobbyPlayers[i].name=row.querySelector('.player-name').value;lobbyPlayers[i].start=row.querySelector('.player-start').value;}});
+}
+function updateBotLobby(){
+ const bots=lobbyPlayers.filter(p=>p.isBot);
+ $('addBotBtn').disabled=lobbyPlayers.length>=10;
+ $('addPlayerBtn').disabled=lobbyPlayers.length>=10;
+}
+$('addPlayerBtn').addEventListener('click',()=>{syncLobbyPlayers();if(lobbyPlayers.length>=10)return;lobbyPlayers.push({name:'',start:''});renderNameInputs();});
+$('addBotBtn').addEventListener('click',()=>{syncLobbyPlayers();if(lobbyPlayers.length>=10)return;editingBotIndex=null;$('confirmBot').textContent='Lisää botti';$('botModal').classList.remove('hidden');updateBotSlider();});
+$('botHandicap').addEventListener('input',updateBotSlider);
+$('cancelBot').addEventListener('click',()=>{editingBotIndex=null;$('botModal').classList.add('hidden');});
+$('confirmBot').addEventListener('click',()=>{
+ const handicap=Number($('botHandicap').value);
+ if(editingBotIndex!==null){
+  syncLobbyPlayers();
+  const p=lobbyPlayers[editingBotIndex];if(p){const old=p.handicap;p.handicap=handicap;if(p.name===`Clanker ${old}`)p.name=`Clanker ${handicap}`;}
+ }else{
+  if(lobbyPlayers.length>=10)return;
+  lobbyPlayers.push({name:'Clanker '+handicap,start:'',isBot:true,handicap});
+ }
+ editingBotIndex=null;$('botModal').classList.add('hidden');renderNameInputs();
+});
+function renderNameInputs(){
+ const parent=$('playerInputs');parent.innerHTML='';
+ lobbyPlayers.forEach((player,i)=>{
+  const wrap=document.createElement('div');wrap.className='player-input'+(player.isBot?' bot-player':'');
+  const input=document.createElement('input');input.className='input player-name';input.value=player.name;input.maxLength=32;input.setAttribute('aria-label',`Pelaaja ${i+1} nimi`);input.placeholder=player.isBot?'Botin nimi':`Pelaaja ${i+1}`;
+  const nameWrap=document.createElement('div');nameWrap.className='player-name-wrap'+(player.isBot?' is-bot':'');nameWrap.append(input);if(player.isBot){const icon=document.createElement('button');icon.type='button';icon.className='bot-name-icon bot-edit-icon';icon.textContent='🤖';icon.setAttribute('aria-label','Muokkaa botin tasoitusta');icon.title='Muokkaa botin tasoitusta';icon.addEventListener('click',()=>{syncLobbyPlayers();editingBotIndex=i;$('botHandicap').value=String(lobbyPlayers[i].handicap||600);$('confirmBot').textContent='Tallenna tasoitus';updateBotSlider();$('botModal').classList.remove('hidden');});nameWrap.append(icon);}
+  const start=document.createElement('input');start.className='input player-start';start.type='number';start.min='2';start.max='1001';start.step='1';start.inputMode='numeric';start.placeholder='Tasoitus';start.value=player.start||'';start.setAttribute('aria-label',`Pelaaja ${i+1} aloituspisteet`);
+  const remove=document.createElement('button');remove.type='button';remove.className='btn btn-danger remove-player';remove.textContent='X';remove.setAttribute('aria-label',`Poista ${player.name||`Pelaaja ${i+1}`}`);
+  remove.addEventListener('click',()=>{syncLobbyPlayers();lobbyPlayers.splice(i,1);renderNameInputs();});
+  wrap.append(nameWrap,start,remove);parent.append(wrap);
+ });
+ updateBotLobby();
+}
+function readNames(){return [...$('playerInputs').querySelectorAll('.player-name')].map((e,i)=>e.value.trim()||defaultNames[i]||`Pelaaja ${i+1}`);}
+const SESSION_KEY='lieksalaskuri-tab-match-v1';
+const PERSISTENT_KEY='lieksalaskuri-active-match-v2';
+function currentPrefs(){
+ const ids=['showQuickScores','roundedCorners','neutralColors','statLegDarts','statPrevious','statMatchAvg','statFirst9','statLegAvg'];
+ return {toggles:Object.fromEntries(ids.map(id=>[id,$(id).getAttribute('aria-pressed')==='true'])),rgb:['R','G','B'].map(c=>Number($('theme'+c).value))};
+}
+function persist(){
+ if(!state)return;
+ const payload={state,history,undoStack,pendingFinish,resultsDismissed,selectedOrder,viewedEventsLeg,matchPausedInLobby,prefs:currentPrefs(),savedAt:Date.now()};
+ // Päivitetään pysyvä tallenne joka tapahtumalla, ei vain välilehteä suljettaessa.
+ // Jos undo-historia kasvaa liian suureksi, säästetään ensisijaisesti nykyinen pelitilanne.
+ let snapshot=JSON.stringify(payload);
+ try{localStorage.setItem(PERSISTENT_KEY,snapshot);}catch(e){
+  try{snapshot=JSON.stringify({...payload,undoStack:undoStack.slice(-15)});localStorage.setItem(PERSISTENT_KEY,snapshot);}catch(ignore){}
+ }
+ try{sessionStorage.setItem(SESSION_KEY,snapshot);}catch(e){}
+}
+function restore(){
+ try{
+  const candidates=[];
+  for(const storage of [localStorage,sessionStorage]){
+   try{const raw=storage.getItem(PERSISTENT_KEY===SESSION_KEY?SESSION_KEY:(storage===localStorage?PERSISTENT_KEY:SESSION_KEY));
+    if(raw){const data=JSON.parse(raw);if(data?.state&&Array.isArray(data.state.players))candidates.push(data);}
+   }catch(ignore){}
+  }
+  if(!candidates.length){try{const legacy=localStorage.getItem('lieksalaskuri-active-match-v1');if(legacy){const data=JSON.parse(legacy);if(data?.state&&Array.isArray(data.state.players))candidates.push(data);}}catch(ignore){}}
+  if(!candidates.length)return;
+  const saved=candidates.sort((a,b)=>(Number(b.savedAt)||0)-(Number(a.savedAt)||0))[0];
+  state=saved.state;history=Array.isArray(saved.history)?saved.history:[];
+  undoStack=Array.isArray(saved.undoStack)?saved.undoStack:[];
+  pendingFinish=saved.pendingFinish||null;resultsDismissed=!!saved.resultsDismissed;
+  selectedOrder=saved.selectedOrder||null;viewedEventsLeg=saved.viewedEventsLeg??null;matchPausedInLobby=!!saved.matchPausedInLobby;
+ }catch(e){}
+}
+function notice(msg,error=false){ /* Ei keskeyttäviä ilmoituksia. */ }
+function lobbyNotice(msg){const el=$('lobbyNotice');el.textContent=msg;el.classList.remove('hidden');}
+function finished(){return !!state&&state.winner!==null&&state.winner!==undefined;}
+function activePlayer(){return state.players[state.current];}
+let selectedOrder=null;
+let viewedEventsLeg=null;
+function nextPlayerIndex(i){const order=state.turnOrder||state.players.map((_,j)=>j);return order[(order.indexOf(i)+1)%order.length];}
+// Ratkaisevassa viimeisessä legissä tie-break ei ole käytössä.
+// Kahden pelaajan ottelussa molempien on oltava yhden legivoiton päässä
+// ottelun voitosta (ja settipelissä myös viimeisessä setissä).
+function isDecidingFinalLeg(){
+ if(!state||finished()||state.players.length<2)return false;
+ const target=Number(state.legsToWin)||1;
+ if(state.winByTwo)return suddenDeathLeg();
+ if(!state.players.every(p=>(Number(p.legs)||0)===target-1))return false;
+ if(Number(state.setsToWin)>0){
+  const setsTarget=Number(state.setsToWin);
+  return state.players.every(p=>(Number(p.sets)||0)===setsTarget-1);
+ }
+ return true;
+}
+function suddenDeathLeg(){
+ if(!state||!state.winByTwo||!state.suddenDeath||state.players.length!==2)return false;
+ const cap=Number(state.legsToWin)+2;
+ if(!state.players.every(p=>p.legs===cap))return false;
+ if(state.setsToWin>0)return state.players.every(p=>p.sets===state.setsToWin-1);
+ return true;
+}
+function effectiveTieBreakDarts(){return (isDecidingFinalLeg()||suddenDeathLeg())?0:(Number(state?.tieBreakDarts)||0);}
+function tieBreakHasBots(){return state.players.some(p=>p.isBot);}
+function tieBreakOrder(){
+ const order=state.turnOrder||state.players.map((_,i)=>i);
+ const start=(state.legIndex||0)%order.length;
+ return order.slice(start).concat(order.slice(0,start));
+}
+function awardTieBreak(idx){
+ // One confirmation only: record the shootout winner and finalize the leg immediately.
+ saveUndo();const p=state.players[idx];
+ p.history.push({score:0,before:p.remaining,after:p.remaining,bust:false,finish:true,tieBreak:true,darts:0,legIndex:state.legIndex||0,winningLegDarts:p.legDarts});
+ state.pendingLegConfirmation={playerIndex:idx,tieBreak:true};
+ state.tieShootout=null;
+ inputLockedUntil=0;
+ $('tieBreakModal').classList.add('hidden');
+ confirmLeg();
+}
+function tieBreakScoreRows(t,indices){
+ return indices.map(i=>`<p style="margin:6px 0">${escapeHtml(state.players[i].name)}${state.players[i].isBot?' 🤖':''} heitti <strong>${t.scores[i]} pistettä</strong>.</p>`).join('');
+}
+function botTieBreakScore(p){
+ // Three darts at scoring targets, not checkout routes; handicap controls hit rates.
+ let score=0;
+ for(let i=0;i<3;i++)score+=botDart('T20',Number(p.handicap)||600).score;
+ return score;
+}
+function showTieShootout(){
+ const t=state.tieShootout;if(!t)return;
+ const order=t.order;
+ // Bot players throw automatically in their actual turn order.
+ while(t.position<order.length && state.players[order[t.position]].isBot){
+  const idx=order[t.position++];t.scores[idx]=botTieBreakScore(state.players[idx]);
+ }
+ if(t.position===order.length){
+  const scores=order.map(i=>t.scores[i]);const highest=Math.max(...scores);
+  const winners=order.filter(i=>t.scores[i]===highest);
+  if(winners.length===1){
+   const details=tieBreakScoreRows(t,order);
+   $('tieBreakChoices').innerHTML=`${details}<p><strong>${escapeHtml(state.players[winners[0]].name)} voitti tie-breakin.</strong></p><button type="button" class="btn btn-primary full" id="tieResultConfirm">Vahvista erä</button>`;
+   $('tieResultConfirm').addEventListener('click',()=>awardTieBreak(winners[0]),{once:true});
+  }else{
+   const details=tieBreakScoreRows(t,order);
+   $('tieBreakChoices').innerHTML=`${details}<p>Tasatulos! Heitetään uusi kolmen tikan kierros.</p><button type="button" class="btn btn-primary full" id="tieRetry">Uusi kierros</button>`;
+   $('tieRetry').addEventListener('click',()=>{state.tieShootout={order:tieBreakOrder(),position:0,scores:{}};showTieShootout();},{once:true});
+  }
+  return;
+ }
+ const idx=order[t.position],p=state.players[idx];
+ const previous=tieBreakScoreRows(t,order.slice(0,t.position));
+ $('tieBreakChoices').innerHTML=`${previous}<p><strong>${escapeHtml(p.name)}</strong>: syötä kolmen tikan yhteistulos</p><input class="input" id="tieScoreInput" type="number" min="0" max="180" step="1" inputmode="numeric" placeholder="0–180" style="width:100%;margin-bottom:10px"><button class="btn btn-primary full" type="button" id="tieScoreConfirm">Vahvista tulos</button><p id="tieScoreError" class="muted small"></p>`;
+ const submitTieScore=()=>{
+  const raw=$('tieScoreInput').value.trim(),score=Number(raw);
+  if(raw===''||!validVisitScore(score)||score<0||score>180){$('tieScoreError').textContent='Syötä mahdollinen kolmen tikan tulos (0–180).';return;}
+  t.scores[idx]=score;t.position++;showTieShootout();
+ };
+ $('tieScoreConfirm').addEventListener('click',submitTieScore);
+ $('tieScoreInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitTieScore();}});
+}
+function inlineTieActive(){return !!state?.tieShootout&&tieBreakHasBots()&&!awaitingLeg();}
+function processInlineTie(){
+ const t=state?.tieShootout;if(!t)return;
+ while(t.position<t.order.length&&state.players[t.order[t.position]].isBot){
+  const i=t.order[t.position++];t.scores[i]=botTieBreakScore(state.players[i]);
+ }
+ if(t.position===t.order.length){
+  const best=Math.max(...t.order.map(i=>t.scores[i]));
+  const winners=t.order.filter(i=>t.scores[i]===best);
+  if(winners.length===1){
+   saveUndo();const idx=winners[0],p=state.players[idx];
+   p.history.push({score:0,before:p.remaining,after:p.remaining,bust:false,finish:true,tieBreak:true,darts:0,legIndex:state.legIndex||0,winningLegDarts:p.legDarts});
+   state.pendingLegConfirmation={playerIndex:idx,tieBreak:true,tieScores:{...t.scores},tieOrder:[...t.order]};
+   state.tieShootout=null;
+  }else{
+   state.tieShootout={order:tieBreakOrder(),position:0,scores:{},drawScores:{...t.scores}};
+   processInlineTie();return;
+  }
+ }
+ persist();render();
+}
+function submitInlineTieScore(raw){
+ if(botTurnBlocked())return;
+ if(!inlineTieActive()||inputLocked())return;
+ const t=state.tieShootout,idx=t.order[t.position];
+ if(idx===undefined||state.players[idx].isBot)return;
+ const val=Number(raw);
+ if(raw===''||!validVisitScore(val)||val<0||val>180){notice('Syötä mahdollinen kolmen tikan tulos (0–180).',true);return;}
+ saveUndo();t.scores[idx]=val;t.position++;$('scoreInput').value='';
+ processInlineTie();
+}
+function advanceTieBreak(){
+ if(!state||!effectiveTieBreakDarts()||awaitingLeg()||finished())return;
+ const limit=effectiveTieBreakDarts();
+ if(state.players.every(p=>(p.legDarts||0)>=limit)){
+  if(tieBreakHasBots()){
+   if(!state.tieShootout)state.tieShootout={order:tieBreakOrder(),position:0,scores:{}};
+   processInlineTie();
+  }else{
+   $('tieBreakChoices').innerHTML=state.players.map((p,i)=>`<button type="button" class="btn btn-secondary full" data-tie-winner="${i}">${escapeHtml(p.name)}</button>`).join('');
+   $('tieBreakModal').classList.remove('hidden');
+  }
+  return;
+ }
+ for(let n=0;n<state.players.length;n++){
+  if((state.players[state.current].legDarts||0)<limit)break;
+  state.current=nextPlayerIndex(state.current);
+ }
+}
+$('tieBreakChoices').addEventListener('click',e=>{
+ const btn=e.target.closest('[data-tie-winner]');if(!btn||!state||tieBreakHasBots())return;
+ awardTieBreak(Number(btn.dataset.tieWinner));
+});
+function showOrderDialog(){
+ const names=readNames();
+ const rows=$('orderRows');rows.innerHTML='';selectedOrder=[];
+ $('orderError').classList.add('hidden');
+ $('orderTitle').textContent=names.length===2?'Valitse aloittaja':'Valitse heittojärjestys';
+ const description=$('orderConfirm').querySelector('.modal p');
+ description.textContent=names.length===2?'Valitse ensimmäisen legin aloittaja.':'Paina pelaajien nimiä haluamassasi heittojärjestyksessä.';
+ const choices=document.createElement('div');choices.className='order-choices'+(names.length===2?' two-player-order':'');
+ const chosen=document.createElement('div');chosen.className='order-chosen';
+ const refresh=()=>{
+  choices.innerHTML='';
+  names.forEach((name,i)=>{
+   const b=document.createElement('button');b.type='button';b.className='btn btn-secondary order-player';
+   b.textContent=name;b.disabled=names.length!==2&&selectedOrder.includes(i);
+   if(names.length===2?selectedOrder[0]===i:selectedOrder.includes(i))b.classList.add('order-selected');
+   b.addEventListener('click',()=>{
+    if(names.length===2){selectedOrder=[i,1-i];}
+    else if(!selectedOrder.includes(i))selectedOrder.push(i);
+    refresh();
+   });choices.append(b);
+  });
+  chosen.textContent=names.length===2?(selectedOrder.length?'Aloittaja: '+names[selectedOrder[0]]:'Valitse aloittaja'):(selectedOrder.length?('Heittojärjestys: '+selectedOrder.map((i,pos)=>`${pos+1}. ${names[i]}`).join(' → ')):'Valitse pelaajat');
+  $('confirmOrder').disabled=selectedOrder.length!==names.length;
+ };
+ rows.append(choices,chosen);
+ if(names.length>2){
+  const reset=document.createElement('button');reset.type='button';reset.className='btn btn-quiet';reset.textContent='Aloita valinta alusta';
+  reset.addEventListener('click',()=>{selectedOrder=[];refresh();});rows.append(reset);
+ }
+ refresh();$('orderConfirm').classList.remove('hidden');
+}
+function startMatch(confirmed=false){
+ if(confirmed!==true){if(lobbyPlayers.length<1){lobbyNotice('Lisää vähintään yksi pelaaja.');return;}if(lobbyPlayers.length===1){selectedOrder=[0];startMatch(true);}else showOrderDialog();return;}
+
+ const n=lobbyPlayers.length, names=readNames(), length=Number($('length').value.trim() === '' ? $('length').placeholder : $('length').value), mode='x01';
+ if(!Number.isInteger(length)||length<1||length>99){lobbyNotice('Pelin pituuden pitää olla kokonaisluku väliltä 1–99 erävoittoa.');return;}
+ const setsToWin=Number($('setsToWin').value.trim() === '' ? $('setsToWin').placeholder : $('setsToWin').value);
+ if(!Number.isInteger(setsToWin)||setsToWin<0||setsToWin>99){lobbyNotice('Settien määrän tulee olla 0–99.');return;}
+ const tieBreakDarts=Number(($('tieBreakDarts').value.trim() || '0d').replace(/d$/i,''));
+ if(!Number.isInteger(tieBreakDarts)||tieBreakDarts<0||tieBreakDarts>999||(tieBreakDarts!==0&&(tieBreakDarts<3||tieBreakDarts%3!==0))){lobbyNotice('Tie-break-rajan tulee olla 0 tai kolmella jaollinen tikkamäärä (3–999).');return;}
+ const start=Number($('startScore').value.trim() === '' ? $('startScore').placeholder : $('startScore').value);
+ if(!Number.isInteger(start)||start<2||start>100000){lobbyNotice('Aloituspisteiden pitää olla kokonaisluku väliltä 2–100000.');return;}
+ const playerRows=[...$('playerInputs').querySelectorAll('.player-input')];
+ for(let i=0;i<n;i++){const raw=playerRows[i].querySelector('.player-start').value.trim();if(raw!==''&&(!Number.isInteger(Number(raw))||Number(raw)<2||Number(raw)>1001)){lobbyNotice(`Pelaajan ${i+1} aloituspisteiden pitää olla kokonaisluku väliltä 2–1001.`);return;}}
+ state={mode,startScore:start,legsToWin:length,setsToWin,tieBreakDarts,startMode:$('startMode').value,winByTwo:$('winByTwo').checked||$('suddenDeath').checked,suddenDeath:$('suddenDeath').checked,checkout:'double',players:names.slice(0,n).map((name,i)=>{const raw=playerRows[i].querySelector('.player-start').value.trim();const playerStart=raw===''?start:Number(raw);return {name,startScore:playerStart,remaining:playerStart,opened:$('startMode').value!=='double',legs:0,sets:0,visits:0,pointsScored:0,darts:0,legDarts:0,history:[],...(lobbyPlayers[i].isBot?{isBot:true,handicap:lobbyPlayers[i].handicap}:{})};}),current:selectedOrder[0],turnOrder:[...selectedOrder],legIndex:0,winner:null,startedAt:Date.now()};
+ history=[];undoStack=[];botReplayTicket=null;matchPausedInLobby=false;$('resumeMatch').classList.add('hidden');editPlayerIndex=null;resultsDismissed=false;inputLockedUntil=0;clearTimeout(inputLockTimer);$('lobby').classList.add('hidden');$('game').classList.remove('hidden');$('backToLobby').classList.remove('hidden');$('lobbyNotice').classList.add('hidden');$('scoreInput').value='';persist();armBackGuard();render();notice(`Ottelu alkoi: ${start} pistettä, pelin pituus ${length} erävoittoa.`);
+}
+function dismissNotice(){clearTimeout(noticeTimer);}
+// Bot skill is based on the selected Kisailu handicap. Checkout accuracy is
+// modelled separately from scoring so a bot can miss doubles repeatedly.
+function botDoubleProbability(handicap){
+ const h=Math.max(350,Math.min(1000,Number(handicap)||600));
+ return .10+(h-350)/650*.27; // per dart: 10–37 %
+}
+// A dart-level simulation with real board neighbours and preferred doubles.
+const BOT_NEIGHBOURS={20:[1,5],19:[3,7],18:[1,4],17:[2,3],16:[7,8],15:[2,10],14:[9,11],13:[4,6],12:[5,9],11:[8,14],10:[6,15],9:[12,14],8:[11,16],7:[16,19],6:[10,13],5:[12,20],4:[13,18],3:[17,19],2:[15,17],1:[18,20]};
+const BOT_DOUBLES=[40,32,24,16,20,36,28,12,8,4,2,18,14,10,6,22,26,30,34,38];
+const BOT_ROUTES={170:['T20','T20','BULL'],167:['T20','T19','BULL'],164:['T20','T18','BULL'],161:['T20','T17','BULL'],160:['T20','T20','D20'],158:['T20','T20','D19'],157:['T20','T19','D20'],156:['T20','T20','D18'],155:['T20','T19','D19'],154:['T20','T18','D20'],153:['T20','T19','D18'],152:['T20','T20','D16'],151:['T20','T17','D20'],150:['T20','T18','D18'],149:['T20','T19','D16'],148:['T20','T16','D20'],147:['T20','T17','D18'],146:['T20','T18','D16'],145:['T20','T15','D20'],144:['T20','T20','D12'],143:['T20','T17','D16'],142:['T20','T14','D20'],141:['T20','T19','D12'],140:['T20','T20','D10'],139:['T19','T14','D20'],138:['T20','T18','D12'],137:['T19','T20','D10'],136:['T20','T20','D8'],135:['T17','T20','D12'],134:['T20','T14','D16'],133:['T20','T11','D20'],132:['T20','T12','D18'],131:['T20','T13','D16'],130:['T20','T20','D5'],129:['T19','T16','D12'],128:['T18','T14','D16'],127:['T20','T17','D8'],126:['T19','T19','D6'],125:['T20','T15','D10'],124:['T20','T16','D8'],123:['T19','T16','D9'],122:['T18','T18','D7'],121:['T20','T11','D14'],120:['T20','S20','D20'],119:['T19','T12','D13'],118:['T20','S18','D20'],117:['T20','S17','D20'],116:['T20','S16','D20'],115:['T20','S15','D20'],114:['T20','S14','D20'],113:['T20','S13','D20'],112:['T20','S12','D20'],111:['T20','S11','D20'],110:['T20','BULL'],109:['T20','S9','D20'],108:['T20','S16','D16'],107:['T19','BULL'],106:['T20','S6','D20'],105:['T20','S13','D16'],104:['T18','BULL'],103:['T19','S10','D18'],102:['T20','S10','D16'],101:['T17','BULL'],100:['T20','D20'],99:['T19','S10','D16'],98:['T20','D19'],97:['T19','D20'],96:['T20','D18'],95:['T19','D19'],94:['T18','D20'],93:['T19','D18'],92:['T20','D16'],91:['T17','D20'],90:['T20','D15'],89:['T19','D16'],88:['T20','D14'],87:['T17','D18'],86:['T18','D16'],85:['T15','D20'],84:['T20','D12'],83:['T17','D16'],82:['BULL','D16'],81:['T19','D12'],80:['T20','D10'],79:['T19','D11'],78:['T18','D12'],77:['T19','D10'],76:['T20','D8'],75:['T17','D12'],74:['T14','D16'],73:['T19','D8'],72:['T16','D12'],71:['T13','D16'],70:['T18','D8'],69:['T19','D6'],68:['T20','D4'],67:['T17','D8'],66:['T10','D18'],65:['T19','D4'],64:['T16','D8'],63:['T13','D12'],62:['T10','D16'],61:['T15','D8']};
+function botSegmentValue(seg){if(seg==='BULL')return 50;const n=Number(seg.slice(1));return n*(seg[0]==='T'?3:seg[0]==='D'?2:1);}
+function botRoute(remaining,darts){
+ if(remaining<=40&&remaining%2===0)return ['D'+remaining/2];
+ if(remaining<=60){
+  for(const d of BOT_DOUBLES){const single=remaining-d;if(single>=1&&single<=20&&darts>=2)return ['S'+single,'D'+d/2];}
+ }
+ if(remaining<=170&&BOT_ROUTES[remaining]&&BOT_ROUTES[remaining].length<=darts)return BOT_ROUTES[remaining];
+ // Set up a preferred double with realistic singles/trebles.
+ let best=null,bestCost=1e9;
+ for(const d of BOT_DOUBLES){if(d>=remaining)continue;const need=remaining-d;
+  for(let n=1;n<=20;n++)for(const mult of [1,3]){
+   const val=n*mult;if(val!==need)continue;
+   const cost=BOT_DOUBLES.indexOf(d)*4+(mult===3?3:0);
+   if(cost<bestCost){bestCost=cost;best=[(mult===3?'T':'S')+n,'D'+d/2];}
+  }
+ }
+ if(best&&darts>=2)return best;
+ return null;
+}
+function botAim(remaining,darts,handicap){
+ // Odd scores below 41 must first be made even; never aim at T20 here.
+ if(remaining<=41 && remaining%2===1){
+  const single=remaining===41?9:1;
+  return 'S'+single;
+ }
+ // With one dart remaining, prefer a safe setup instead of a doomed checkout.
+ if(darts===1 && remaining>40 && remaining<=60){
+  const single=remaining-40;
+  if(single>=1&&single<=20)return 'S'+single;
+ }
+ const route=botRoute(remaining,darts);
+ if(route)return route[0];
+ // Scoring stage: aim at T20/T19; approach a favourite double below 230.
+ if(remaining<=230){
+  const leaves=[40,32,24,16,20,36,28,12,8];
+  for(const leave of leaves){const need=remaining-leave;if(need>=1&&need<=20)return 'S'+need;if(need%3===0&&need/3>=1&&need/3<=20)return 'T'+need/3;}
+ }
+ return Math.random()<.17?'T19':'T20';
+}
+const BOT_SCORING_FACTOR = 0.72;
+// Jokaiselle legille arvotaan etukäteen tuplaan tarvittavien yritysten määrä.
+// Arvio = 1 / tuplaosumatodennäköisyys; sallittu vaihtelu ±5 tikkaa.
+function botLegDoubleDart(player){
+ if(!Number.isInteger(player.botDoubleTarget)||player.botDoubleTarget<1){
+  const expected=Math.round(1/botDoubleProbability(player.handicap));
+  const low=Math.max(1,expected-5),high=expected+5;
+  player.botDoubleTarget=low+Math.floor(Math.random()*(high-low+1));
+  player.botDoubleAttempts=0;
+ }
+ player.botDoubleAttempts++;
+ return player.botDoubleAttempts>=player.botDoubleTarget;
+}
+function botDart(aim,handicap,checkoutPlayer=null){
+ const h=Math.max(350,Math.min(1000,Number(handicap)||600));
+ const skill=(h-350)/650,r=Math.random();
+ const miss=r<(.075-.035*skill);if(miss)return {score:0,double:false};
+ if(aim==='BULL'){
+  if(checkoutPlayer ? botLegDoubleDart(checkoutPlayer) : Math.random()<(.035+.16*skill))return {score:50,double:true};
+  return {score:Math.random()<.65?25:Math.floor(Math.random()*20)+1,double:false};
+ }
+ const mult=aim[0],n=Number(aim.slice(1));
+ if(mult==='D'){
+  if(checkoutPlayer ? botLegDoubleDart(checkoutPlayer) : Math.random()<botDoubleProbability(h))return {score:2*n,double:true};
+  if(Math.random()<.18)return {score:0,double:false};
+  if(Math.random()<.14)return {score:BOT_NEIGHBOURS[n][Math.floor(Math.random()*2)],double:false};
+  return {score:n,double:false};
+ }
+ const neighbourChance=.35-.30*skill;
+ if(Math.random()<neighbourChance)return {score:BOT_NEIGHBOURS[n][Math.floor(Math.random()*2)],double:false};
+ if(mult==='S'){
+  // Single targets are reliable but can still miss into adjacent sectors.
+  return {score:n,double:false};
+ }
+ // Typical single-sector misses, with occasional triple and double.
+ const calibration=[[350,.79],[450,1.15],[550,1.09],[600,1.20],[700,1.22],[800,1.30],[900,1.43],[1000,1.43]]; let factor=calibration[calibration.length-1][1];for(let j=1;j<calibration.length;j++){if(h<=calibration[j][0]){const [a,fa]=calibration[j-1], [b,fb]=calibration[j];factor=fa+(fb-fa)*(h-a)/(b-a);break;}}// Tasataan yksittäisten legien ääripäitä maltillisesti: jos botti on
+ // tavoitevauhtiaan edellä, tulostarkkuus laskee hieman; jos jäljessä,
+ // se nousee. Tämä ei muuta tuplakatkojen ennalta arvottua tikkaikkunaa.
+ let paceAdjustment=1;
+ if(checkoutPlayer && checkoutPlayer.startScore>0 && checkoutPlayer.legDarts>=6){
+  const targetAvg=botAverage(h);
+  const expectedDarts=3*checkoutPlayer.startScore/targetAvg;
+  const progress=(checkoutPlayer.startScore-checkoutPlayer.remaining)/checkoutPlayer.startScore;
+  const expectedProgress=Math.min(1,(checkoutPlayer.legDarts/expectedDarts));
+  const lead=progress-expectedProgress;
+  paceAdjustment=Math.max(.86,Math.min(1.14,1-.50*lead));
+ }
+ const tripleChance=Math.min(.85,(.04+.46*skill)*factor*paceAdjustment);
+ const t=Math.random();
+ if(t<tripleChance)return {score:3*n,double:false};
+ if(t<tripleChance+.045)return {score:2*n,double:false};
+ return {score:n,double:false};
+}
+function botSimulateVisit(player){
+ const h=Number(player.handicap)||600,start=player.remaining;
+ let left=start,scored=0,used=0,finish=false,bust=false;
+ const isDoubleStart=start<=40&&start%2===0;
+ for(let i=0;i<3;i++){
+  let aim=botAim(left,3-i,h);
+  // Do not gamble on a treble if it would almost certainly bust the leg.
+  if(aim[0]==='T' && left<=60 && left-3*Number(aim.slice(1))<2){
+   aim='S'+Math.max(1,Math.min(20,left-40));
+  }
+  // Very high checkouts are only possible for stronger bots and extremely rare.
+  if(left>100&&h<550&&botRoute(left,3-i))aim=left>160?'T20':'T19';
+  else if(left>100&&botRoute(left,3-i)&&Math.random()>.018*(h-350)/650)aim=left>160?'T20':'T19';
+  const dart=botDart(aim,h,player);used++;
+  if(left-dart.score<0||left-dart.score===1||(left-dart.score===0&&!dart.double)){
+   bust=true;scored=0;break;
+  }
+  left-=dart.score;scored+=dart.score;
+  if(left===0&&dart.double){finish=true;break;}
+ }
+ // Prevent artificial 0–2 scoring visits when not on a double.
+ if(!finish&&!bust&&scored<3&&!isDoubleStart&&start>60){scored=3;left=start-3;if(left<2){scored=0;bust=true;}}
+ // Do not report a nonexistent finish from an impossible score.
+ if(finish&&start>100&&h<550){finish=false;scored=0;bust=true;}
+ return {score:scored,finish,darts:used,bust};
+}
+// Botin arvotaan tulos vain kerran: kumotun vuoron uusinta käyttää samoja satunnaislukuja.
+let botReplayTicket=null;
+let botActionInProgress=false;
+function botTurnBlocked(){return !!state && !botActionInProgress && !awaitingLeg() && (activePlayer()?.isBot || (state.tieShootout && state.players[state.tieShootout.order[state.tieShootout.position]]?.isBot));}
+function runBotRecorded(action){
+ const before=JSON.stringify({state,history});
+ const replay=botReplayTicket&&botReplayTicket.before===before?botReplayTicket.values:null;
+ const values=[];let index=0;
+ const originalRandom=Math.random;
+ try{
+  Math.random=()=>{
+   const value=replay&&index<replay.length?replay[index]:originalRandom();
+   values.push(value);index++;return value;
+  };
+  botActionInProgress=true;action();
+ }finally{botActionInProgress=false;Math.random=originalRandom;}
+ // Tallennetaan vain jos botin vuoro todella muutti pelitilannetta.
+ if(JSON.stringify({state,history})!==before){
+  botReplayTicket={before,values};
+ }else if(replay){botReplayTicket=null;}
+}
+function scheduleBot(){
+ clearTimeout(botTimer);
+ if(!state||finished()||awaitingLeg()||state.tieShootout||!activePlayer()?.isBot||!$('game')||$('game').classList.contains('hidden'))return;
+ botTimer=setTimeout(()=>{
+  if(!state||finished()||awaitingLeg()||state.tieShootout||!activePlayer()?.isBot)return;
+  if(inputLocked()){scheduleBot();return;}
+  runBotRecorded(()=>{
+  const p=activePlayer();
+  if(state.startMode==='double'&&!p.opened){
+   // Double-in: the opening double is 1.55x as likely as a checkout
+   // double. Every missed opening dart counts towards the visit (and
+   // therefore lowers the three-dart average compared with straight-in).
+   const openingChance=Math.min(1,1.55*botDoubleProbability(p.handicap));
+   let openingScore=0,openedThisVisit=false;
+   for(let dartIndex=0;dartIndex<3;dartIndex++){
+    if(!openedThisVisit){
+     if(Math.random()>=openingChance)continue;
+     openedThisVisit=true;
+     openingScore+=40; // D20 opens the leg; earlier misses score zero.
+    }else{
+     openingScore+=botDart('T20',p.handicap).score;
+    }
+   }
+   if(!openedThisVisit){submitEntry('0');return;}
+   if(openingScore>=p.remaining-1){recordBust();return;}
+   submitEntry(String(openingScore));return;
+  }
+  const visit=botSimulateVisit(p);
+  if(visit.finish){checkoutWithButton(visit.darts);return;}
+  if(visit.bust){recordBust();return;}
+  submitEntry(String(visit.score));
+  });
+ },950);
+}
+function recordBust(){
+ if(botTurnBlocked())return;
+ if(!state||finished()||inputLocked()||editPlayerIndex!==null||awaitingLeg())return;
+ const p=activePlayer(),before=p.remaining;
+ saveUndo();p.visits++;p.darts+=3;p.legDarts=(p.legDarts||0)+3;
+ p.history.push({score:0,before,after:before,bust:true,darts:3,legIndex:state.legIndex||0,turnId:history.length+1});
+ history.unshift({name:p.name,score:0,before,after:before,bust:true,darts:3,legIndex:state.legIndex||0,turn:history.length+1});
+ state.current=nextPlayerIndex(state.current);advanceTieBreak();$('scoreInput').value='';persist();lockInputs();
+}
+
+function firstNineAverage(p){
+ // Each leg contributes at most its first nine thrown darts.
+ let used=0,points=0,legDarts=0;
+ for(const h of p.history||[]){
+   const darts=Number(h.darts)||3;
+   const available=Math.max(0,9-legDarts);
+   const take=Math.min(darts,available);
+   if(take>0){points+=(Number(h.score)||0)*take/darts;used+=take;}
+   legDarts+=darts;
+   if(h.finish)legDarts=0;
+ }
+ return used?(points/used*3).toFixed(2):'—';
+}
+function winningLegDartCounts(p){
+ const counts=[];
+ for(const [index,h] of (p.history||[]).entries()){
+  if(!h.finish)continue;
+  if(Number.isFinite(Number(h.winningLegDarts))&&h.winningLegDarts!==undefined){counts.push(Number(h.winningLegDarts));continue;}
+  // Vanhoille tallenteille päätellään voitetun legin tikkamäärä historiasta.
+  let darts=0;
+  for(let i=index;i>=0;i--){
+   const entry=p.history[i];
+   if(i!==index&&entry.finish)break;
+   if(h.legIndex!==undefined&&entry.legIndex!==undefined&&entry.legIndex!==h.legIndex)break;
+   darts+=Number(entry.darts)||3;
+  }
+  counts.push(darts);
+ }
+ return counts;
+}
+function showResults(){
+ if(!finished()||resultsDismissed)return;
+ const w=state.players[state.winner];
+ $('resultSubtitle').textContent=`${w.name} voitti ${state.players.map(p=>state.setsToWin>0?(p.sets||0):p.legs).join('-')}`;
+ const totalLegWins=state.players.map(p=>(p.history||[]).filter(h=>h.finish===true).length);
+ const playerRows=state.players.map((p,i)=>`<tr><td>${escapeHtml(p.name)}</td>${state.setsToWin>0?`<td>${p.sets||0}</td>`:''}<td>${state.setsToWin>0?totalLegWins[i]:p.legs}</td><td>${p.darts?(p.pointsScored/p.darts*3).toFixed(2):'—'}</td><td>${firstNineAverage(p)}</td></tr>`).join('');
+ const wonLegs=[];
+ state.players.forEach((p,playerIndex)=>{
+   (p.history||[]).forEach((h,historyIndex)=>{
+     if(!h.finish)return;
+     let darts=Number(h.winningLegDarts);
+     if(!Number.isFinite(darts)||darts<=0){
+       darts=0;
+       for(let i=historyIndex;i>=0;i--){
+         const entry=p.history[i];
+         if(i!==historyIndex&&entry.finish)break;
+         if(h.legIndex!==undefined&&entry.legIndex!==undefined&&h.legIndex!==entry.legIndex)break;
+         darts+=Number(entry.darts)||3;
+       }
+     }
+     const legNumber=Number.isInteger(Number(h.legIndex))?Number(h.legIndex)+1:null;
+     const startPoints=Number(p.startScore??state.startScore);
+     const average=darts>0?((startPoints-(h.tieBreak?Number(h.after)||0:0))/darts*3).toFixed(2):'—';
+     wonLegs.push({legNumber,playerIndex,name:p.name,darts,average,checkout:h.tieBreak?'Tie-break':Number(h.score)||0});
+   });
+ });
+ wonLegs.sort((a,b)=>(a.legNumber??Infinity)-(b.legNumber??Infinity));
+ // Assemble the turns in chronological order. New matches store legIndex in the
+ // global history; older saved matches can be reconstructed from player histories.
+ const legVisits=new Map();
+ const allTurns=history.slice().reverse();
+ const usedPlayerTurns=new Map();
+ state.players.forEach(p=>usedPlayerTurns.set(p.name,0));
+ allTurns.forEach((turn,sequence)=>{
+   let legIndex=Number.isInteger(turn.legIndex)?turn.legIndex:null;
+   if(legIndex===null){
+     const player=state.players.find(p=>p.name===turn.name);
+     const index=usedPlayerTurns.get(turn.name)||0;
+     const corresponding=player?.history?.[index];
+     if(Number.isInteger(corresponding?.legIndex))legIndex=corresponding.legIndex;
+   }
+   usedPlayerTurns.set(turn.name,(usedPlayerTurns.get(turn.name)||0)+1);
+   if(legIndex===null)return;
+   if(!legVisits.has(legIndex))legVisits.set(legIndex,[]);
+   legVisits.get(legIndex).push(turn);
+ });
+ const expandedLegs=new Set();
+ function detailRow(leg){
+   const visits=legVisits.get((leg.legNumber??1)-1)||[];
+   const players=state.players;
+   const byPlayer=players.map(p=>visits.filter(v=>v.name===p.name));
+   const rounds=Math.max(0,...byPlayer.map(v=>v.length));
+   const order=state.turnOrder||players.map((_,i)=>i);
+   const starterIndex=order[((leg.legNumber??1)-1)%order.length];
+   const header=players.map((p,i)=>`<th colspan="2" class="sheet-player-name">${escapeHtml(p.name)}${i===starterIndex?'<span class="sheet-starter-dot" title="Legin aloittaja" aria-label="Legin aloittaja"></span>':''}</th>`).join('');
+   const starts=players.map(p=>`<td class="sheet-score"></td><td class="sheet-remaining sheet-start">${Number(p.startScore??state.startScore)}</td>`).join('');
+   const roundRows=Array.from({length:rounds},(_,i)=>{
+     const cells=byPlayer.map(playerVisits=>{
+       const v=playerVisits[i];
+       if(!v)return '<td class="sheet-score"></td><td class="sheet-remaining"></td>';
+       const scored=v.bust?'0':String(Number(v.score)||0);
+       const after=Number(v.after);
+       const checkout=v.finish&&after===0;
+       return `<td class="sheet-score">${scored}</td><td class="sheet-remaining">${checkout?`<span class="sheet-finish" title="Katko ${Number(v.darts)||3} tikalla">${Number(v.darts)||3}</span>`:after}</td>`;
+     }).join('');
+     const marker='';
+     return `<tr><td class="sheet-marker">${marker}</td>${cells}</tr>`;
+   }).join('');
+   const totals=players.map((p,idx)=>{
+     const used=byPlayer[idx].reduce((sum,v)=>sum+(Number(v.darts)||3),0);
+     return `<td class="sheet-score"></td><td class="sheet-remaining sheet-darts">${used}d</td>`;
+   }).join('');
+   return `<tr class="leg-visit-detail" data-leg-detail="${leg.legNumber}" hidden><td colspan="5"><div class="leg-detail-inner"><div class="visit-scroll"><table class="leg-score-sheet"><thead><tr><th class="sheet-marker"></th>${header}</tr></thead><tbody><tr><td class="sheet-marker"></td>${starts}</tr>${roundRows||`<tr><td colspan="${players.length*2+1}" class="sheet-no-data">Heittovuoroja ei ole tallennettu.</td></tr>`}<tr class="sheet-total-row"><td></td>${totals}</tr></tbody></table></div></div></td></tr>`;
+ }
+ function legRow(leg,label){
+   return `<tr class="leg-result-row" data-leg-toggle="${leg.legNumber}" tabindex="0" role="button" aria-expanded="false" aria-label="Näytä tai piilota ${escapeHtml(label)} heittovuorot"><td>${escapeHtml(label)} <span class="leg-chevron">▾</span></td><td>${escapeHtml(leg.name)}</td><td>${leg.darts}d</td><td>${leg.average}</td><td>${leg.checkout}</td></tr>${detailRow(leg)}`;
+ }
+ let legRows;
+ if(state.setsToWin>0){
+   let setNumber=1,legInSet=0;
+   const setWins=Array(state.players.length).fill(0);
+   legRows=wonLegs.map(leg=>{
+     legInSet++;
+     const setHeading=legInSet===1?`<tr class="set-result-heading"><th colspan="5">Setti ${setNumber}</th></tr>`:'';
+     const row=legRow(leg,`Legi ${legInSet}`);
+     setWins[leg.playerIndex]++;
+     if(setWins[leg.playerIndex]>=state.legsToWin){setNumber++;legInSet=0;setWins.fill(0);}
+     return setHeading+row;
+   }).join('');
+ }else{
+   legRows=wonLegs.map((leg,index)=>legRow(leg,`Legi ${leg.legNumber??index+1}`)).join('');
+ }
+ $('resultDetails').innerHTML=`<table class="result-table"><thead><tr><th>Pelaaja</th>${state.setsToWin>0?'<th>Setit</th>':''}<th>Erät</th><th>3 tikan ka.</th><th>Ens 9 ka.</th></tr></thead><tbody>${playerRows}</tbody></table><h3 style="margin:22px 0 8px;font-size:16px">Legien tulokset</h3><table class="result-table leg-results-table"><thead><tr><th>Legi</th><th>Voittaja</th><th>Tikat</th><th>3 tikan ka.</th><th>Poikkaisu</th></tr></thead><tbody>${legRows}</tbody></table>`;
+ $('resultDetails').querySelectorAll('[data-leg-toggle]').forEach(row=>{
+   const toggle=()=>{
+     const detail=$('resultDetails').querySelector(`[data-leg-detail="${row.dataset.legToggle}"]`);
+     if(!detail)return;
+     detail.hidden=!detail.hidden;
+     row.setAttribute('aria-expanded',String(!detail.hidden));
+     row.querySelector('.leg-chevron').textContent=detail.hidden?'▾':'▴';
+   };
+   row.addEventListener('click',toggle);
+   row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+ });
+ $('resultOverlay').classList.remove('hidden');
+}
+function saveUndo(){undoStack.push(JSON.stringify({state,history}));if(undoStack.length>100)undoStack.shift();}
+function toggleEditPlayer(index){
+ if(!state||finished()||awaitingLeg())return;
+ if(editPlayerIndex===index){editPlayerIndex=null;}
+ else {
+  const p=state.players[index],last=p.history?.[p.history.length-1];
+  if(!last||last.finish||last.legIndex!==(state.legIndex||0))return;
+  editPlayerIndex=index;
+ }
+ $('scoreInput').value='';render();
+}
+function correctPreviousEntry(raw,isRemaining){
+ if(botTurnBlocked())return;
+ if(editPlayerIndex===null||!state||finished()||awaitingLeg())return;
+ const index=editPlayerIndex,p=state.players[index],last=p.history?.[p.history.length-1];
+ if(!last||last.finish||last.legIndex!==(state.legIndex||0)){editPlayerIndex=null;render();return;}
+ if(raw==='')raw=isRemaining?'':'0';
+ if(raw===''||!/^\d+$/.test(String(raw)))return;
+ const val=Number(raw),before=Number(last.before),score=isRemaining?before-val:val,after=before-score;
+ if(!Number.isInteger(val)||!validVisitScore(score)||after<0||(state.checkout==='double'&&after<2)){if(!validVisitScore(score))invalidScoreNotice();return;}
+ // A previous checkout cannot be retroactively created using score correction.
+ if(after===0)return;
+ saveUndo();
+ const oldScore=Number(last.score)||0;
+ p.pointsScored+=score-oldScore;
+ p.remaining=after;
+ last.score=score;last.after=after;last.bust=false;
+ const globalEntry=history.find(h=>h.name===p.name&&h.turn===last.turnId);
+ // Older matches lack a turn ID: the first global entry for this player is their latest turn.
+ const h=globalEntry||history.find(h=>h.name===p.name);
+ if(h){h.score=score;h.after=after;h.bust=false;}
+ editPlayerIndex=null;$('scoreInput').value='';persist();lockInputs();
+}
+// Kaikki yhdella kolmen tikan vuorolla saavutettavat pistemaarat.
+const dartValues=[0,25,50,...Array.from({length:20},(_,i)=>[i+1,(i+1)*2,(i+1)*3]).flat()];
+const possibleThreeDartScores=new Set();
+for(const a of dartValues)for(const b of dartValues)for(const c of dartValues)possibleThreeDartScores.add(a+b+c);
+function validVisitScore(score){return Number.isInteger(score)&&possibleThreeDartScores.has(score);}
+const doubleOpeningScores=new Set();
+// Avausheiton ensimmainen pisteita tuottava tikka on tupla; sita voi seurata enintaan kaksi tikkaa.
+for(const d of [50,...Array.from({length:20},(_,i)=>(i+1)*2)])
+ for(const a of dartValues)for(const b of dartValues)doubleOpeningScores.add(d+a+b);
+function invalidScoreNotice(){notice('Tätä pistemäärää ei voi heittää kolmella tikalla.',true);}
+function submitEntry(raw, isRemaining=false){
+ if(botTurnBlocked())return;
+ if(inlineTieActive()){submitInlineTieScore(raw);return;}
+ if(editPlayerIndex!==null){correctPreviousEntry(raw,isRemaining);return;}
+ if(!state||inputLocked()||awaitingLeg()){return;}if(finished()){notice('Ottelu on päättynyt. Aloita uusi ottelu.',true);return;}
+ if(raw==='')raw=isRemaining?'': '0';
+ if(!Number.isFinite(Number(raw))){notice('Syötä pisteet numeropainikkeilla.',true);return;}
+ const val=Number(raw);if(!Number.isInteger(val)||val<0||(!isRemaining&&val>180)||(isRemaining&&val>activePlayer().remaining)){notice(isRemaining?`Syötä jäljellä oleva tulos väliltä 0–${activePlayer().remaining}.`:'Syötä kokonaisluku väliltä 0–180.',true);return;}
+ const p=activePlayer(), before=p.remaining, score=isRemaining?before-val:val, after=before-score;
+ if(isRemaining && val>before){notice(`Jäljellä oleva tulos ei voi olla suurempi kuin ${before}.`,true);return;}
+ if(!validVisitScore(score)){invalidScoreNotice();return;}
+ if(state.startMode==='double'&&!p.opened&&score>0&&!doubleOpeningScores.has(score)){notice('Tupla-aloituksessa ensimmäisen pisteitä tuottavan tikan on oltava tupla.',true);return;}
+ if(after<0||(state.checkout==='double'&&after===1)){
+ saveUndo();p.visits++;p.darts+=3;p.legDarts=(p.legDarts||0)+3;p.history.push({score:0,before,after:before,bust:true,darts:3,legIndex:state.legIndex||0,turnId:history.length+1});history.unshift({name:p.name,score:0,before,after:before,bust:true,darts:3,legIndex:state.legIndex||0,turn:history.length+1});state.current=nextPlayerIndex(state.current);advanceTieBreak();$('scoreInput').value='';persist();lockInputs();notice(`${p.name}: bust — pisteet palautuvat arvoon ${before}.`);return;
+ }
+ if(after===0){
+   if(state.checkout==='double'&&score===0){notice('Nollan pitää syntyä oikealla pisteheitolla.',true);return;}
+   notice('Katko kirjataan yläpuolen I, II tai III -painikkeella.',true);return;
+ }
+ saveUndo();if(state.startMode==='double'&&score>0)p.opened=true;p.visits++;p.darts+=3;p.legDarts=(p.legDarts||0)+3;p.pointsScored+=score;p.history.push({score,before,after,bust:false,darts:3,legIndex:state.legIndex||0,turnId:history.length+1});p.remaining=after;history.unshift({name:p.name,score,before,after,bust:false,darts:3,legIndex:state.legIndex||0,turn:history.length+1});state.current=nextPlayerIndex(state.current);advanceTieBreak();$('scoreInput').value='';persist();lockInputs();
+}
+function completeCheckout(darts){
+ if(!pendingFinish)return;
+ const f=pendingFinish,p=state.players[f.playerIndex];saveUndo();p.visits++;p.darts+=darts;p.legDarts=(p.legDarts||0)+darts;p.pointsScored+=f.score;p.history.push({score:f.score,before:f.before,after:0,bust:false,finish:true,darts,legIndex:state.legIndex||0,winningLegDarts:p.legDarts});p.remaining=0;
+ history.unshift({name:p.name,score:f.score,before:f.before,after:0,bust:false,finish:true,darts,legIndex:state.legIndex||0,turn:history.length+1});
+ // Katko kirjataan, mutta erä ja ottelun eteneminen vahvistetaan erikseen.
+ state.pendingLegConfirmation={playerIndex:f.playerIndex};
+ pendingFinish=null;$('scoreInput').value='';persist();lockInputs();
+ if(p.isBot){setTimeout(()=>{if(state?.pendingLegConfirmation?.playerIndex===state.players.indexOf(p)&&!inputLocked())confirmLeg();},1080);}
+}
+function suddenDeathAfterWin(){
+ if(!state||!state.winByTwo||!state.suddenDeath||state.players.length!==2)return false;
+ if(state.setsToWin>0&&!state.players.every(p=>p.sets===state.setsToWin-1))return false;
+ const cap=state.legsToWin+2;
+ return state.players.some(p=>p.legs===cap+1)&&state.players.some(p=>p.legs===cap);
+}
+function confirmLeg(){
+ if(!awaitingLeg()||inputLocked())return;
+ const winnerIndex=state.pendingLegConfirmation.playerIndex;
+ const p=state.players[winnerIndex];
+ state.pendingLegConfirmation=null;
+ state.tieShootout=null;
+ p.legs++;
+ const legWon=state.winByTwo&&state.players.length===2
+   ? (p.legs>=state.legsToWin && (p.legs-Math.max(...state.players.filter(q=>q!==p).map(q=>q.legs))>=2 || suddenDeathAfterWin()))
+   : p.legs>=state.legsToWin;
+ if(legWon){
+   if(state.setsToWin>0){
+     p.sets=(p.sets||0)+1;
+     if(p.sets>=state.setsToWin)state.winner=winnerIndex;
+     else state.players.forEach(pl=>{pl.legs=0;});
+   }else state.winner=winnerIndex;
+ }
+ if(!finished()){
+   state.players.forEach(pl=>{pl.remaining=pl.startScore??state.startScore;pl.legDarts=0;delete pl.botDoubleTarget;delete pl.botDoubleAttempts;pl.opened=state.startMode!=='double';});
+   state.legIndex=(state.legIndex||0)+1;
+   state.current=(state.turnOrder||state.players.map((_,i)=>i))[state.legIndex%state.players.length];
+   state.legJustEnded=false;
+   $('tieBreakModal').classList.add('hidden');
+ }
+ persist();render();
+ if(finished()){resultsDismissed=false;showResults();}
+}
+function undo(){clearTimeout(botTimer);editPlayerIndex=null;if(!undoStack.length){notice('Ei kumottavia vuoroja.',true);return;}const prev=JSON.parse(undoStack.pop());const restored=JSON.stringify({state:prev.state,history:prev.history});if(botReplayTicket?.before!==restored)botReplayTicket=null;state=prev.state;history=prev.history;pendingFinish=null;resultsDismissed=false;$('tieBreakModal').classList.add('hidden');$('resultOverlay').classList.add('hidden');inputLockedUntil=0;clearTimeout(inputLockTimer);persist();render();notice('Edellinen kirjaus kumottiin.');}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){
+ if(!state)return;
+ scheduleBot();
+ const suddenDeathActive=suddenDeathLeg();
+ $('matchTitle').textContent=suddenDeathActive?'Äkkikuolema':(state.setsToWin>0?`First to ${state.setsToWin} sets / ${state.legsToWin} legs`:`First to ${state.legsToWin} legs`);
+ $('matchTitle').style.color=suddenDeathActive?'#f04452':'';
+ $('winnerBox').classList.toggle('hidden',!finished());
+ if(finished()){const w=state.players[state.winner];$('winnerBox').innerHTML=`<div class="cup">🏆</div><h3>${escapeHtml(w.name)} voitti!</h3><p>${state.setsToWin>0?'Settivoitot: '+w.sets:'Erävoitot: '+w.legs}</p>`;}
+ const multi=state.players.length>=3;
+ const board=$('scoreboard');board.classList.toggle('multiplayer',multi);
+ board.style.setProperty('--opponents',String(Math.max(1,state.players.length-1)));
+ const ordered=multi?[...Array.from({length:state.players.length},(_,offset)=>(state.turnOrder||state.players.map((_,i)=>i))[((state.turnOrder||state.players.map((_,i)=>i)).indexOf(state.current)+offset)%state.players.length])]:state.players.map((_,i)=>i);
+ const currentTieLimit=effectiveTieBreakDarts();
+ board.innerHTML=ordered.map(i=>{const p=state.players[i],active=i===state.current&&!finished(),mini=multi&&i!==state.current,avg=p.darts?(p.pointsScored/p.darts*3).toFixed(2):'—',legAvg=(p.legDarts||0)>0?(((p.startScore??state.startScore)-p.remaining)/(p.legDarts||1)*3).toFixed(2):'0.00';const stats=[];if(scoreStatEnabled('statLegDarts'))stats.push(`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`);if(scoreStatEnabled('statPrevious')){const prev=(p.history||[]).filter(h=>!h.tieBreak).slice(-1)[0];stats.push(`Edellinen <b>${prev?(prev.bust?'BUST':prev.score):'—'}</b>`)}if(scoreStatEnabled('statMatchAvg'))stats.push(`ka. <b>${avg}</b>`);if(scoreStatEnabled('statFirst9'))stats.push(`9 tik. ka. <b>${firstNineAverage(p)}</b>`);if(scoreStatEnabled('statLegAvg'))stats.push(`Erän ka. <b>${legAvg}</b>`);return `<article class="player-card ${active?'active':''} ${mini?'mini':''}"><div class="pname" title="${escapeHtml(p.name)}">${escapeHtml(p.name)}${p.isBot?' 🤖':''}</div>${state.setsToWin>0?`<strong class="${mini?'mini-sets':'main-sets'}" title="Voitetut setit">${p.sets||0}</strong>`:''}${mini?"":`<strong class="main-legs" title="Voitetut erät">${p.legs}</strong>`}<button type="button" class="remaining score-edit-trigger ${editPlayerIndex===i?'editing':''}" data-edit-player="${i}" title="Muokkaa edellistä heittovuoroa">${p.remaining}</button>${mini?`<strong class="mini-legs" title="Erävoitot">${p.legs}</strong>${`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}" style="display:block">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`}`:`<div class="stats"><span class="average-line">${stats.join(' / ')}</span></div>`}</article>`;}).join('');
+ const tie=state.tieShootout;
+ const tieScores=state.pendingLegConfirmation?.tieScores;
+ const tieOrder=state.pendingLegConfirmation?.tieOrder;
+ const displayScores=tie?tie.scores:tieScores;
+ const displayOrder=tie?tie.order:tieOrder;
+ const tieText=displayOrder?displayOrder.filter(i=>displayScores[i]!==undefined).map(i=>`${escapeHtml(state.players[i].name)}${state.players[i].isBot?' 🤖':''} heitti <strong>${displayScores[i]} pistettä</strong>.`).join('<div style="margin:4px 0"></div>'):'';
+ $('tieInlineMessage').classList.toggle('hidden',!tie&&!tieScores);
+ $('tieInlineMessage').innerHTML=tieScores?`${tieText}<div style="margin-top:7px">${escapeHtml(state.players[state.pendingLegConfirmation.playerIndex].name)} voitti tie-breakin.</div>`:(tieText||'Kirjaa tie-break tulos');
+ $('quickScores').classList.toggle('hidden',!!tie);
+ $('checkoutActions').classList.toggle('hidden',awaitingLeg()||!!tie);
+ $('confirmLegBtn').classList.toggle('hidden',!awaitingLeg());
+ $('confirmLegBtn').disabled=inputLocked();
+ $('checkoutActions').querySelectorAll('button').forEach(b=>b.disabled=botTurnBlocked()||editPlayerIndex!==null||finished()||inputLocked()||awaitingLeg()||(state.startMode==='double'&&!activePlayer().opened&&!doubleOpeningScores.has(activePlayer().remaining))||!checkoutPossible(activePlayer().remaining,Number(b.dataset.checkoutDarts)));
+ $('submitScore').disabled=botTurnBlocked()||awaitingLeg()||finished()||(editPlayerIndex===null&&inputLocked());$('backspaceBtn').textContent=awaitingLeg()?'Kumoa':'⌫';$('backspaceBtn').disabled=awaitingLeg()?inputLocked():finished()||(editPlayerIndex===null&&inputLocked());$('scoreInput').disabled=botTurnBlocked()||awaitingLeg()||finished()||(editPlayerIndex===null&&inputLocked());$('remainingBtn').disabled=botTurnBlocked()||awaitingLeg()||finished()||(editPlayerIndex===null&&inputLocked());$('scoreInput').placeholder=editPlayerIndex===null?'Vuoron pisteet':state.players[editPlayerIndex].name+' · korjaa vuoro';
+ const remaining=activePlayer().remaining;
+ $('quickScores').querySelectorAll('button').forEach(b=>{
+  const original=Number(b.dataset.originalScore??b.dataset.score);
+  b.dataset.originalScore=String(original);
+  const isBust=original===180&&remaining<=181;
+  b.textContent=isBust?'0':String(original);
+  b.classList.toggle('bust-quick',false);
+  b.dataset.bust=isBust?'true':'false';
+  b.disabled=botTurnBlocked()||awaitingLeg()||editPlayerIndex!==null||finished()||inputLocked()||(!isBust&&original>=remaining-1);
+ });
+ $('keypad').querySelectorAll('button').forEach(b=>{if(b.id==='undoBtn'){b.disabled=!undoStack.length;return;}b.disabled=botTurnBlocked()||awaitingLeg()||finished()||(editPlayerIndex===null&&inputLocked());});
+ const latestLeg=Number(state.legIndex)||0;
+ if(viewedEventsLeg===null)viewedEventsLeg=latestLeg;
+ viewedEventsLeg=Math.max(0,Math.min(latestLeg,viewedEventsLeg));
+ const currentLeg=viewedEventsLeg;
+ $('eventsPrev').disabled=currentLeg<=0;
+ $('eventsNext').disabled=currentLeg>=latestLeg;
+ const liveVisits=history.filter(h=>(Number.isInteger(h.legIndex)?h.legIndex:currentLeg)===currentLeg).slice().reverse();
+ const players=state.players;
+ const perPlayer=players.map(p=>liveVisits.filter(h=>h.name===p.name));
+ const rows=Math.max(0,...perPlayer.map(a=>a.length));
+ const order=state.turnOrder||players.map((_,i)=>i);
+ const starter=order[currentLeg%order.length];
+ const names=players.map((p,i)=>`<th colspan="2" class="sheet-player-name">${escapeHtml(p.name)}${i===starter?'<span class="sheet-starter-dot" title="Legin aloittaja" aria-label="Legin aloittaja"></span>':''}</th>`).join('');
+ const starts=players.map(p=>`<td class="sheet-score"></td><td class="sheet-remaining sheet-start">${Number(p.startScore??state.startScore)}</td>`).join('');
+ const visitRows=Array.from({length:rows},(_,i)=>`<tr><td class="sheet-marker"></td>${perPlayer.map(a=>{const v=a[i];if(!v)return '<td class="sheet-score"></td><td class="sheet-remaining"></td>';const score=v.bust?'0':String(Number(v.score)||0);const after=Number(v.after);return `<td class="sheet-score">${score}</td><td class="sheet-remaining">${v.finish&&after===0?`<span class="sheet-finish" title="Katko ${Number(v.darts)||3} tikalla">${Number(v.darts)||3}</span>`:after}</td>`;}).join('')}</tr>`).join('');
+ const totals=players.map((p,i)=>`<td class="sheet-score"></td><td class="sheet-remaining sheet-darts">${perPlayer[i].reduce((n,v)=>n+(Number(v.darts)||3),0)}d</td>`).join('');
+ $('historyCount').textContent=`Erä ${currentLeg+1} / ${latestLeg+1}`;
+ $('historyList').innerHTML=`<div class="visit-scroll"><table class="leg-score-sheet"><thead><tr><th class="sheet-marker"></th>${names}</tr></thead><tbody><tr><td class="sheet-marker"></td>${starts}</tr>${visitRows}${rows?'':`<tr><td colspan="${players.length*2+1}" class="sheet-no-data">Ei vielä kirjauksia.</td></tr>`}<tr class="sheet-total-row"><td></td>${totals}</tr></tbody></table></div>`;
+ $('undoBtn').classList.remove('hidden');$('undoBtn').disabled=!undoStack.length;
+ persist();
+}
+function matchInProgress(){return !!state&&!finished()&&!$('game').classList.contains('hidden');}
+let leavePromptOpen=false;
+function requestLobbyExit(){
+ if($('game').classList.contains('hidden'))return;
+ if(!matchInProgress()){resetToLobby();return;}
+ leavePromptOpen=true;
+ $('leaveConfirm').classList.remove('hidden');
+ $('cancelLeave').focus();
+}
+function cancelLobbyExit(){leavePromptOpen=false;$('leaveConfirm').classList.add('hidden');}
+// Kaksi saman sivun historia-askelta: Androidin Takaisin avaa ensin
+// vahvistuksen eikä siirry suoraan edelliselle sivulle.
+let backGuardArmed=false;
+function armBackGuard(){
+ if(backGuardArmed)return;
+ try{
+  window.history.replaceState({...window.history.state,lieksaBase:true},'',window.location.href);
+  window.history.pushState({lieksaGuard:true},'',window.location.href);
+  backGuardArmed=true;
+ }catch(e){}
+}
+window.addEventListener('popstate',()=>{
+ // Android Chrome: jos poistumisvahvistus on jo näkyvissä,
+ // Takaisin sulkee vain ikkunan. Ottelu jää käyntiin.
+ if(leavePromptOpen){
+  cancelLobbyExit();
+  try{window.history.pushState({lieksaGuard:true},'',window.location.href);backGuardArmed=true;}catch(e){}
+  return;
+ }
+ if(matchInProgress()){
+  // Ensimmäinen Takaisin avaa vahvistuksen, ei poistu sivulta.
+  try{window.history.pushState({lieksaGuard:true},'',window.location.href);backGuardArmed=true;}catch(e){}
+  requestLobbyExit();
+ }else if(!$('game').classList.contains('hidden')&&!finished()){
+  try{window.history.pushState({lieksaGuard:true},'',window.location.href);backGuardArmed=true;}catch(e){}
+  requestLobbyExit();
+ }else{
+  backGuardArmed=false;
+ }
+});
+// Selaimen/sovelluksen sulkemista tai sivun lataamista ei voi estää
+// luotettavasti mobiilissa. Tuetuissa selaimissa näytetään natiivi varoitus.
+window.addEventListener('beforeunload',e=>{
+ if(!matchInProgress())return;
+ e.preventDefault();
+ e.returnValue='';
+});
+// Uusi ottelu tyhjentää tallennetun ottelun; sivun uudelleenavaus ei tyhjennä.
+function resetToLobby(){
+ cancelLobbyExit();matchPausedInLobby=false;$('resumeMatch').classList.add('hidden');editPlayerIndex=null;resultsDismissed=true;
+ $('resultOverlay').classList.add('hidden');dismissNotice();
+ $('game').classList.add('hidden');$('lobby').classList.remove('hidden');$('backToLobby').classList.add('hidden');
+ $('length').value='3'; // Uuden ottelun oletus: First to 3 legs
+ state=null;history=[];undoStack=[];
+ try{sessionStorage.removeItem(SESSION_KEY);localStorage.removeItem(PERSISTENT_KEY);localStorage.removeItem('lieksalaskuri-active-match-v1');localStorage.removeItem('darts-scorekeeper-v2');}catch(e){}
+}
+const scoreStatIds=['statLegDarts','statPrevious','statMatchAvg','statFirst9','statLegAvg'];
+function scoreStatEnabled(id){const b=$(id);return b&&b.getAttribute('aria-pressed')==='true'}
+const uiPrefs=(()=>{
+ try{const saved=JSON.parse(localStorage.getItem(PERSISTENT_KEY)||sessionStorage.getItem(SESSION_KEY)||'null');
+  const t=saved?.prefs?.toggles||{};
+  return {quick:t.showQuickScores,rounded:t.roundedCorners,neutral:t.neutralColors,
+   scoreStats:Object.fromEntries(['statLegDarts','statPrevious','statMatchAvg','statFirst9','statLegAvg'].filter(id=>id in t).map(id=>[id,t[id]])),rgb:saved?.prefs?.rgb};
+ }catch(e){return {}}
+})();
+function updateGamePrefs(){
+ const quick=$('showQuickScores').getAttribute('aria-pressed')==='true';
+ const rounded=$('roundedCorners').getAttribute('aria-pressed')==='true';
+ const neutral=$('neutralColors').getAttribute('aria-pressed')==='true';
+ $('quickScores').classList.toggle('hidden',!quick);
+ document.body.classList.toggle('square-corners',!rounded);
+ document.body.classList.toggle('neutral-colors',neutral);
+ for(const id of ['showQuickScores','roundedCorners','neutralColors',...scoreStatIds]){
+  const button=$(id), enabled=button.getAttribute('aria-pressed')==='true';
+  button.classList.toggle('setting-enabled',enabled);
+  button.classList.toggle('setting-disabled',!enabled);
+ }
+ // Tallennetaan asetukset vasta, kun mahdollinen aiempi peli on palautettu.
+ if(state)persist();
+}
+const defaultThemeRgb=[37,63,85];
+function readThemeRgb(){return ['R','G','B'].map(c=>Number($('theme'+c).value))}
+function mixTheme(rgb,ratio,base){return rgb.map((v,i)=>Math.round(v*ratio+base[i]*(1-ratio)))}
+function hexTheme(rgb){return '#'+rgb.map(v=>Math.max(0,Math.min(255,v)).toString(16).padStart(2,'0')).join('')}
+function applyTheme(){
+ const rgb=readThemeRgb(), root=document.body;
+ const variants={
+  '--theme-bg':mixTheme(rgb,.32,[10,10,14]),
+  '--theme-top':mixTheme(rgb,.68,[15,15,20]),
+  '--theme-panel':mixTheme(rgb,.40,[18,18,23]),
+  '--theme-panel-end':mixTheme(rgb,.32,[17,17,21]),
+  '--theme-card':mixTheme(rgb,.36,[16,16,21]),
+  '--theme-input':mixTheme(rgb,.23,[12,12,16]),
+  '--theme-key':mixTheme(rgb,.43,[34,34,40]),
+  '--theme-key-border':mixTheme(rgb,.35,[70,70,78]),
+  '--theme-action':mixTheme(rgb,.20,[37,37,43]),
+  '--theme-action-border':mixTheme(rgb,.23,[65,65,70]),
+  '--theme-quick-disabled':mixTheme(rgb,.25,[33,33,39]),
+  '--theme-quick-disabled-border':mixTheme(rgb,.20,[58,58,65])
+ };
+ Object.entries(variants).forEach(([key,val])=>root.style.setProperty(key,hexTheme(val)));
+ ['R','G','B'].forEach((c,i)=>$('theme'+c+'Value').textContent=rgb[i]);
+
+}
+const savedRgb=Array.isArray(uiPrefs.rgb)&&uiPrefs.rgb.length===3&&uiPrefs.rgb.every(v=>Number.isInteger(v)&&v>=0&&v<=255)?uiPrefs.rgb:defaultThemeRgb;
+['R','G','B'].forEach((c,i)=>{
+ $('theme'+c).value=savedRgb[i];
+ $('theme'+c).addEventListener('input',()=>{applyTheme();updateGamePrefs()});
+});
+$('resetTheme').addEventListener('click',()=>{['R','G','B'].forEach((c,i)=>$('theme'+c).value=defaultThemeRgb[i]);applyTheme();updateGamePrefs()});
+applyTheme();
+function setSettingToggle(id,enabled){$(id).setAttribute('aria-pressed',String(enabled));updateGamePrefs()}
+$('showQuickScores').setAttribute('aria-pressed',String(uiPrefs.quick!==false));
+$('roundedCorners').setAttribute('aria-pressed',String(uiPrefs.rounded!==undefined?uiPrefs.rounded!==false:uiPrefs.square!==true));
+$('neutralColors').setAttribute('aria-pressed',String(uiPrefs.neutral===true));
+$('showQuickScores').addEventListener('click',()=>setSettingToggle('showQuickScores',$('showQuickScores').getAttribute('aria-pressed')!=='true'));
+$('roundedCorners').addEventListener('click',()=>setSettingToggle('roundedCorners',$('roundedCorners').getAttribute('aria-pressed')!=='true'));
+$('neutralColors').addEventListener('click',()=>setSettingToggle('neutralColors',$('neutralColors').getAttribute('aria-pressed')!=='true'));
+scoreStatIds.forEach((id,i)=>{const initial=uiPrefs.scoreStats?.[id];$(id).setAttribute('aria-pressed',String(initial===undefined?i<3:initial===true));$(id).addEventListener('click',()=>{setSettingToggle(id,!scoreStatEnabled(id));if(state?.players)render()})});
+updateGamePrefs();
+function showToolModal(id){$('eventsModal').classList.add('hidden');$('settingsModal').classList.add('hidden');$(id).classList.remove('hidden');$(id).querySelector('button').focus();}
+function closeToolModal(id){$(id).classList.add('hidden');}
+$('suddenDeathInfo').addEventListener('click',()=>{$('suddenDeathInfoModal').classList.remove('hidden');$('closeSuddenDeathInfo').focus();});
+$('closeSuddenDeathInfo').addEventListener('click',()=>{$('suddenDeathInfoModal').classList.add('hidden');$('suddenDeathInfo').focus();});
+$('suddenDeathInfoModal').addEventListener('click',e=>{if(e.target===$('suddenDeathInfoModal'))$('suddenDeathInfoModal').classList.add('hidden');});
+$('openEvents').addEventListener('click',()=>{viewedEventsLeg=Number(state?.legIndex)||0;render();showToolModal('eventsModal');});
+$('eventsPrev').addEventListener('click',()=>{if(viewedEventsLeg>0){viewedEventsLeg--;render();}});
+$('eventsNext').addEventListener('click',()=>{if(viewedEventsLeg<(Number(state?.legIndex)||0)){viewedEventsLeg++;render();}});
+$('openSettings').addEventListener('click',()=>showToolModal('settingsModal'));
+$('openLobbySettings').addEventListener('click',()=>showToolModal('settingsModal'));
+$('closeEvents').addEventListener('click',()=>closeToolModal('eventsModal'));
+$('closeSettings').addEventListener('click',()=>closeToolModal('settingsModal'));
+['eventsModal','settingsModal'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeToolModal(id)}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeToolModal('eventsModal');closeToolModal('settingsModal')}});
+$('cancelLeave').addEventListener('click',cancelLobbyExit);
+function pauseMatchToLobby(){
+ cancelLobbyExit();
+ if(!state||finished()){resetToLobby();return;}
+ clearTimeout(botTimer);
+ matchPausedInLobby=true;
+ $('resultOverlay').classList.add('hidden');
+ $('game').classList.add('hidden');$('lobby').classList.remove('hidden');
+ $('backToLobby').classList.add('hidden');
+ $('resumeMatch').classList.remove('hidden');
+ persist();
+}
+function resumeMatch(){
+ if(!state||finished())return;
+ matchPausedInLobby=false;
+ $('lobby').classList.add('hidden');$('game').classList.remove('hidden');
+ $('backToLobby').classList.remove('hidden');
+ $('resumeMatch').classList.add('hidden');
+ armBackGuard();render();persist();
+}
+$('confirmLeave').addEventListener('click',pauseMatchToLobby);
+$('resumeMatch').addEventListener('click',resumeMatch);
+$('leaveConfirm').addEventListener('click',e=>{if(e.target===$('leaveConfirm'))cancelLobbyExit();});
+$('cancelOrder').addEventListener('click',()=>{$('orderConfirm').classList.add('hidden');});
+$('confirmOrder').addEventListener('click',()=>{
+ const n=lobbyPlayers.length;
+ if(!Array.isArray(selectedOrder)||selectedOrder.length!==n||new Set(selectedOrder).size!==n){
+  $('orderError').textContent='Valitse jokainen pelaaja heittojärjestykseen.';
+  $('orderError').classList.remove('hidden');return;
+ }
+ $('orderConfirm').classList.add('hidden');startMatch(true);
+});
+$('startMatch').addEventListener('click',startMatch);$('backToLobby').addEventListener('click',requestLobbyExit);
+$('submitScore').addEventListener('click',()=>submitEntry($('scoreInput').value));$('backspaceBtn').addEventListener('click',()=>{if($('backspaceBtn').disabled)return;if(awaitingLeg()){undo();return;}$('scoreInput').value=$('scoreInput').value.slice(0,-1);});
+$('scoreInput').addEventListener('input',e=>{const clean=e.target.value.replace(/\D/g,'').slice(0,3);if(e.target.value!==clean)e.target.value=clean;});
+$('scoreInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitEntry($('scoreInput').value);}});$('scoreboard').addEventListener('click',e=>{const b=e.target.closest('[data-edit-player]');if(b)toggleEditPlayer(Number(b.dataset.editPlayer));});
+$('quickScores').addEventListener('click',e=>{const b=e.target.closest('[data-score]');if(b&&!b.disabled&&!inputLocked()&&!botTurnBlocked()){if(b.dataset.bust==='true'){recordBust();}else{$('scoreInput').value=b.dataset.originalScore??b.dataset.score;submitEntry(b.dataset.originalScore??b.dataset.score);}}});
+$('keypad').addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(!b||b.disabled||botTurnBlocked()||(editPlayerIndex===null&&inputLocked()))return;const k=b.dataset.key,input=$('scoreInput');if(k==='clear')input.value='';else if(k==='back')input.value=input.value.slice(0,-1);else if(input.value.length<3)input.value+=k;});
+$('confirmLegBtn').addEventListener('click',confirmLeg);
+$('remainingBtn').addEventListener('click',()=>submitEntry($('scoreInput').value,true));$('undoBtn').addEventListener('click',undo);
+$('closeResults').addEventListener('click',()=>{resultsDismissed=true;$('resultOverlay').classList.add('hidden');});
+$('resultsLobby').addEventListener('click',resetToLobby);
+$('checkoutActions').querySelectorAll('[data-checkout-darts]').forEach(b=>b.addEventListener('click',()=>checkoutWithButton(Number(b.dataset.checkoutDarts))));
+// Tallennus myös silloin, kun selain siirtää välilehden taustalle tai sulkee sen.
+window.addEventListener('pagehide',persist);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persist()});
+restore();
+$('tieBreakDarts').addEventListener('input',e=>{const digits=e.target.value.replace(/\D/g,'');e.target.value=digits?digits+'d':'';e.target.setSelectionRange(digits.length,digits.length);});
+if(state){$('tieBreakDarts').value=state.tieBreakDarts?String(state.tieBreakDarts)+'d':'';$('startMode').value=state.startMode||'straight';$('winByTwo').checked=!!state.winByTwo;$('suddenDeath').checked=!!state.suddenDeath;if(!Array.isArray(state.turnOrder)||state.turnOrder.length!==state.players.length)state.turnOrder=state.players.map((_,i)=>i);if(!Number.isInteger(state.legIndex))state.legIndex=0;lobbyPlayers=state.players.map(p=>({name:p.name,start:(p.startScore&&p.startScore!==state.startScore)?String(p.startScore):'',...(p.isBot?{isBot:true,handicap:p.handicap||600}:{})}));renderNameInputs();$('startScore').value=String(state.startScore);$('length').value=String(state.legsToWin);$('setsToWin').value=String(state.setsToWin||0);if(!finished()){
+ // Jokainen uusi avaus alkaa aulasta, vaikka ottelu olisi ollut käynnissä.
+ matchPausedInLobby=true;
+ $('resumeMatch').classList.remove('hidden');
+ $('game').classList.add('hidden');$('lobby').classList.remove('hidden');
+ $('backToLobby').classList.add('hidden');
+ }else{
+ $('lobby').classList.add('hidden');$('game').classList.remove('hidden');$('backToLobby').classList.remove('hidden');armBackGuard();render();showResults();
+ }}
+else{renderNameInputs();}
+})();
+</script></body></html>
