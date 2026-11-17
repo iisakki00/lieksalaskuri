@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#10131a"><title>Lieksalaskuri</title>
 <style>
 :root{color-scheme:dark;--bg:#10131a;--panel:#191e29;--panel2:#222938;--line:#343d50;--text:#f3f5f9;--muted:#a9b3c5;--accent:#ed405b;--green:#43d6a0;--gold:#f2c66d}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1c2433 0,#10131a 55%);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}main{max-width:1120px;margin:auto;padding:20px 14px 36px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;font-size:24px;font-weight:900}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:800}.top h1{font-size:clamp(22px,4vw,30px);margin:1px 0 0;letter-spacing:-.04em}.panel{background:linear-gradient(160deg,#1b202b,#161a23);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 16px 45px #0002}.panel h2{font-size:18px;margin:0 0 15px}.field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.field label,.label{font-size:13px;color:var(--muted);font-weight:700}.input,select{width:100%;background:#10141c;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;outline:none;min-height:46px}.input:focus,select:focus{border-color:var(--accent)}.players{display:grid;gap:8px}.player-input{display:grid;grid-template-columns:minmax(0,1fr) 105px 44px;gap:8px;align-items:center}.player-input .input{min-width:0}.player-name-wrap{position:relative;min-width:0}.player-name-wrap .player-name{width:100%}.player-name-wrap.is-bot .player-name{padding-right:39px}.bot-name-icon{position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:20px;line-height:1}.bot-edit-icon{pointer-events:auto;cursor:pointer;z-index:2;background:transparent;border:0;padding:5px;border-radius:8px;display:grid;place-items:center;min-width:32px;min-height:32px}.bot-edit-icon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.player-start{width:100%;min-width:0!important;padding:10px 8px!important;font-size:14px!important}.player-start::placeholder{font-size:11px}.num{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;background:var(--panel2);border-radius:9px;color:var(--gold);font-weight:800}.btn{border:0;border-radius:11px;padding:12px 14px;font:inherit;font-weight:800;cursor:pointer;transition:transform .12s;touch-action:manipulation;min-height:44px}.btn:active{transform:scale(.98)}.btn-primary{background:#1d9a62;color:white}.btn-danger{background:#d9384f;color:white}.btn-secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn-quiet{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn:disabled{opacity:.35;cursor:not-allowed}.full{width:100%}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1}.muted{color:var(--muted)}.small{font-size:12px}.layout{display:grid;grid-template-columns:1fr;gap:16px}.hidden{display:none!important}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.notice{margin-top:12px;padding:11px;border-radius:11px;background:#17352d;border:1px solid #28634f;color:#baf5df;font-size:14px}.notice.error{background:#3b2027;border-color:#783343;color:#ffd4dc}.lobby{max-width:720px;margin:0 auto}.lobby-intro{color:var(--muted);margin:-5px 0 17px}.divider{height:1px;background:var(--line);margin:16px 0}.game-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.game-head h2{font-size:21px;margin:0}.status{padding:6px 10px;border-radius:999px;background:#262e3c;color:var(--muted);font-size:11px;font-weight:800;white-space:nowrap}.scoreboard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.player-card{border:1px solid var(--line);background:#151a23;border-radius:15px;padding:16px;position:relative;min-width:0}.player-card.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px #ed405b55}.player-card.active:before{content:"VUOROSSA";position:absolute;right:10px;top:10px;font-size:9px;letter-spacing:.1em;color:var(--accent);font-weight:900}.pname{font-weight:850;padding-right:45px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}.legs{display:none}.entry{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.entry-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.entry-top strong{font-size:14px}.entry-top span{font-size:12px;color:var(--muted)}.score-input-row{display:flex;gap:8px}.score-input-row input{font-size:23px;font-weight:850;text-align:center;min-width:0}.score-input-row .btn{min-width:95px}.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:9px}.quick .btn{padding:9px 3px;font-size:14px;min-height:42px}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}.keypad .btn{font-size:18px;min-height:39px;padding:5px 4px;background:#253f55;border:1px solid #37617d;color:#f4fbff}.keypad .action{font-size:12px}.keypad .remaining-btn{background:#d9384f;border:1px solid #f15a6d;color:white}.keypad .action{background:#30394a;border-color:#46536a}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.average-line{white-space:normal;line-height:1.5}.leg-darts{font-size:11px;color:#8ea6bd;font-weight:800;letter-spacing:.02em;white-space:nowrap}.entry-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.undo-inline{min-height:36px!important;padding:7px 9px!important;font-size:12px!important}.history{margin-top:18px}.history-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.history-head h3{font-size:15px;margin:0}.history-list{display:grid;gap:7px;max-height:250px;overflow:auto}.history-item{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:9px;background:#121720;border:1px solid #293142;border-radius:10px;padding:9px 11px;font-size:13px}.history-round{color:var(--gold);font-weight:800}.history-points{font-weight:850;font-variant-numeric:tabular-nums}.empty{text-align:center;padding:22px 10px;color:var(--muted);font-size:13px}.winner{text-align:center;padding:17px;background:#18362f;border:1px solid #2b6a55;border-radius:14px;margin-bottom:14px}.winner .cup{font-size:30px}.winner h3{margin:5px 0;font-size:22px}.winner p{margin:0;color:#baf5df}.footer{text-align:center;color:#687489;font-size:12px;margin-top:20px}.modal-backdrop{position:fixed;inset:0;background:#05070bdc;display:grid;place-items:center;padding:18px;z-index:10}.modal{width:min(100%,420px);background:#1a202c;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 20px 80px #0008}.modal h2{margin:0 0 7px}.modal p{color:var(--muted);margin:0 0 16px}.dart-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.dart-options .btn{font-size:20px;padding:17px 8px}.end-note{font-size:12px;color:var(--muted);margin-top:9px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1c2433 0,#10131a 55%);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}main{max-width:1120px;margin:auto;padding:20px 14px 36px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:var(--accent);display:grid;place-items:center;font-size:24px;font-weight:900}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:800}.top h1{font-size:clamp(22px,4vw,30px);margin:1px 0 0;letter-spacing:-.04em}.panel{background:linear-gradient(160deg,#1b202b,#161a23);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 16px 45px #0002}.panel h2{font-size:18px;margin:0 0 15px}.field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.field label,.label{font-size:13px;color:var(--muted);font-weight:700}.input,select{width:100%;background:#10141c;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;outline:none;min-height:46px}.input:focus,select:focus{border-color:var(--accent)}.players{display:grid;gap:8px}.player-input{display:grid;grid-template-columns:minmax(0,1fr) 105px 44px;gap:8px;align-items:center}.player-input .input{min-width:0}.player-name-wrap{position:relative;min-width:0}.player-name-wrap .player-name{width:100%}.player-name-wrap.is-bot .player-name{padding-right:39px}.bot-name-icon{position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:20px;line-height:1}.bot-edit-icon{pointer-events:auto;cursor:pointer;z-index:2;background:transparent;border:0;padding:5px;border-radius:8px;display:grid;place-items:center;min-width:32px;min-height:32px}.bot-edit-icon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.player-start{width:100%;min-width:0!important;padding:10px 8px!important;font-size:14px!important}.player-start::placeholder{font-size:11px}.num{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;background:var(--panel2);border-radius:9px;color:var(--gold);font-weight:800}.btn{border:0;border-radius:11px;padding:12px 14px;font:inherit;font-weight:800;cursor:pointer;transition:transform .12s;touch-action:manipulation;min-height:44px}.btn:active{transform:scale(.98)}.btn-primary{background:#1d9a62;color:white}.btn-danger{background:#d9384f;color:white}.btn-secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn-quiet{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn:disabled{opacity:.35;cursor:not-allowed}.full{width:100%}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1}.muted{color:var(--muted)}.small{font-size:12px}.layout{display:grid;grid-template-columns:1fr;gap:16px}.hidden{display:none!important}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.notice{margin-top:12px;padding:11px;border-radius:11px;background:#17352d;border:1px solid #28634f;color:#baf5df;font-size:14px}.notice.error{background:#3b2027;border-color:#783343;color:#ffd4dc}.lobby{max-width:720px;margin:0 auto}.lobby-intro{color:var(--muted);margin:-5px 0 17px}.divider{height:1px;background:var(--line);margin:16px 0}.game-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.game-head h2{font-size:21px;margin:0}.status{padding:6px 10px;border-radius:999px;background:#262e3c;color:var(--muted);font-size:11px;font-weight:800;white-space:nowrap}.scoreboard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.player-card{border:1px solid var(--line);background:#151a23;border-radius:15px;padding:16px;position:relative;min-width:0}.player-card.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px #ed405b55}.player-card.active:before{content:"VUOROSSA";position:absolute;right:10px;top:10px;font-size:9px;letter-spacing:.1em;color:var(--accent);font-weight:900}.pname.leg-starter{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}.pname{font-weight:850;padding-right:45px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}.legs{display:none}.entry{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.entry-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.entry-top strong{font-size:14px}.entry-top span{font-size:12px;color:var(--muted)}.score-input-row{display:flex;gap:8px}.score-input-row input{font-size:23px;font-weight:850;text-align:center;min-width:0}.score-input-row .btn{min-width:95px}.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:9px}.quick .btn{padding:9px 3px;font-size:14px;min-height:42px}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}.keypad .btn{font-size:18px;min-height:39px;padding:5px 4px;background:#253f55;border:1px solid #37617d;color:#f4fbff}.keypad .action{font-size:12px}.keypad .remaining-btn{background:#d9384f;border:1px solid #f15a6d;color:white}.keypad .action{background:#30394a;border-color:#46536a}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.average-line{white-space:normal;line-height:1.5}.leg-darts{font-size:11px;color:#8ea6bd;font-weight:800;letter-spacing:.02em;white-space:nowrap}.entry-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.undo-inline{min-height:36px!important;padding:7px 9px!important;font-size:12px!important}.history{margin-top:18px}.history-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.history-head h3{font-size:15px;margin:0}.history-list{display:grid;gap:7px;max-height:250px;overflow:auto}.history-item{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:9px;background:#121720;border:1px solid #293142;border-radius:10px;padding:9px 11px;font-size:13px}.history-round{color:var(--gold);font-weight:800}.history-points{font-weight:850;font-variant-numeric:tabular-nums}.empty{text-align:center;padding:22px 10px;color:var(--muted);font-size:13px}.winner{text-align:center;padding:17px;background:#18362f;border:1px solid #2b6a55;border-radius:14px;margin-bottom:14px}.winner .cup{font-size:30px}.winner h3{margin:5px 0;font-size:22px}.winner p{margin:0;color:#baf5df}.footer{text-align:center;color:#687489;font-size:12px;margin-top:20px}.modal-backdrop{position:fixed;inset:0;background:#05070bdc;display:grid;place-items:center;padding:18px;z-index:10}.modal{width:min(100%,420px);background:#1a202c;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 20px 80px #0008}.modal h2{margin:0 0 7px}.modal p{color:var(--muted);margin:0 0 16px}.dart-options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.dart-options .btn{font-size:20px;padding:17px 8px}.end-note{font-size:12px;color:var(--muted);margin-top:9px}
 @media(min-width:850px){.layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.lobby{max-width:800px}.game-layout{grid-template-columns:minmax(0,1fr) 330px}.game-main{min-width:0}.game-side{min-width:0}}
 @media(max-width:500px){main{padding:7px 7px 14px}.top{margin-bottom:8px}.logo{width:34px;height:34px}.top h1{font-size:20px}.panel{padding:10px;border-radius:13px}.game-layout{gap:8px}.game-head{margin-bottom:8px}.game-head h2{font-size:17px}.scoreboard{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.player-card{padding:12px 9px;border-radius:11px}.player-card.active:before{font-size:8px;top:6px;right:6px}.pname{font-size:13px;padding-right:40px}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:10px;flex-direction:column;gap:2px}.quick{grid-template-columns:repeat(6,1fr);gap:4px;margin-top:6px}.quick .btn{min-height:31px;padding:4px 1px;font-size:12px;border-radius:7px}.entry{margin-top:9px;padding-top:9px}.entry-top{margin-bottom:6px}.score-input-row{gap:5px}.score-input-row input{font-size:20px;min-height:39px;padding:6px}.score-input-row .btn{min-width:75px;min-height:39px;padding:6px 9px}.keypad{gap:4px;margin-top:6px}.keypad .btn{min-height:35px;font-size:17px;border-radius:7px}.keypad .action{font-size:11px}.entry-actions{margin-top:4px}.end-note{font-size:10px;margin-top:5px}.settings-grid{grid-template-columns:1fr 1fr}.player-input{grid-template-columns:minmax(0,1fr) 85px 40px;gap:5px}.player-start{font-size:12px!important;padding:8px 5px!important}.num{width:25px;height:25px}.history-list{max-height:150px}.history{margin-top:0}.game-side{padding:10px}.footer{margin-top:8px;font-size:10px}}
 @media(max-width:500px) and (max-height:780px){main{padding-top:4px}.top{margin-bottom:5px}.brand{gap:7px}.eyebrow{font-size:9px}.panel{padding:8px}.player-card{padding:9px 7px}.remaining{font-size:clamp(64px,17vw,92px);line-height:1.02;margin:3px 0 1px}.stats{font-size:9px}.entry{margin-top:6px;padding-top:6px}.quick .btn{min-height:28px;font-size:11px}.keypad .btn{min-height:31px}.score-input-row input,.score-input-row .btn{min-height:35px}.end-note{display:none}}
@@ -430,6 +430,9 @@ body.neutral-colors #game .checkout-actions .checkout-btn:disabled{
 .bot-handicap-controls{display:flex;align-items:center;gap:10px;margin:20px 0;width:100%}
 .bot-handicap-controls input[type=range]{flex:1;min-width:0;width:auto;margin:0;touch-action:pan-y}
 .bot-handicap-step{flex:0 0 48px;min-width:48px;height:48px;padding:0;font-size:24px;font-weight:700;line-height:1;touch-action:manipulation}
+
+.result-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:15px 0 13px}.result-tab{min-height:43px;padding:9px 6px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text);font:inherit;font-size:13px;font-weight:800;cursor:pointer}.result-tab.active{background:var(--accent);color:white;border-color:var(--accent)}#resultDetails [hidden]{display:none!important}.result-stat-heading{margin:22px 0 8px;font-size:16px}.result-score-counts th,.result-score-counts td{text-align:center!important}.result-score-counts th:first-child,.result-score-counts td:first-child{text-align:left!important}.result-score-counts{min-width:350px}
+.length-stepper{display:flex;align-items:stretch;gap:5px}.length-stepper>.input{flex:1;min-width:0}.length-arrows{display:flex;flex-direction:column;gap:3px}.length-arrows button{min-width:48px;min-height:25px;flex:1;background:#303c4d;border:1px solid #526074;border-radius:7px;color:white;font-size:13px;cursor:pointer;touch-action:manipulation}
 </style>
 </head>
 <body><main>
@@ -445,8 +448,8 @@ body.neutral-colors #game .checkout-actions .checkout-btn:disabled{
     <div class="field"><label for="startMode">Aloitustapa</label><select id="startMode" class="input"><option value="straight">Suora aloitus</option><option value="double">Tupla-aloitus</option></select></div>
   </div>
   <div class="settings-grid">
-    <div class="field"><label for="length">Legivoitot / setti (tai ottelu)</label><input class="input" id="length" type="number" min="1" max="99" placeholder="3" inputmode="numeric"></div>
-    <div class="field"><label for="setsToWin">Settejä voittoon (0 = ei settejä)</label><input class="input" id="setsToWin" type="number" min="0" max="99" placeholder="0" inputmode="numeric"></div>
+    <div class="field"><label for="length">Legivoitot / setti (tai ottelu)</label><div class="length-stepper"><input class="input" id="length" type="number" min="1" max="99" step="1" placeholder="3" inputmode="numeric"><div class="length-arrows"><button type="button" data-step-target="length" data-step="1" aria-label="Lisää legipituutta">▲</button><button type="button" data-step-target="length" data-step="-1" aria-label="Vähennä legipituutta">▼</button></div></div></div>
+    <div class="field"><label for="setsToWin">Settejä voittoon (0 = ei settejä)</label><div class="length-stepper"><input class="input" id="setsToWin" type="number" min="0" max="99" step="1" placeholder="0" inputmode="numeric"><div class="length-arrows"><button type="button" data-step-target="setsToWin" data-step="1" aria-label="Lisää settipituutta">▲</button><button type="button" data-step-target="setsToWin" data-step="-1" aria-label="Vähennä settipituutta">▼</button></div></div></div>
   </div>
   <div class="settings-grid">
     <div class="field"><label>Erän ratkaisusäännöt</label><label class="lobby-check"><input id="winByTwo" type="checkbox"> Voitto vähintään 2 legin erolla</label><div class="sudden-death-row"><label class="lobby-check"><input id="suddenDeath" type="checkbox"> Äkkikuolema</label><button type="button" id="suddenDeathInfo" class="sudden-death-info" aria-label="Tietoa äkkikuolemasta" title="Tietoa äkkikuolemasta">ⓘ</button></div></div>
@@ -496,7 +499,7 @@ body.neutral-colors #game .checkout-actions .checkout-btn:disabled{
 <div class="modal-backdrop hidden" id="tieBreakModal" role="dialog" aria-modal="true" aria-labelledby="tieBreakTitle"><div class="modal"><h2 id="tieBreakTitle">Tie-break</h2><p>Valitse erän voittaja</p><div id="tieBreakChoices" style="display:grid;gap:10px"></div></div></div>
 <div class="modal-backdrop hidden" id="orderConfirm" role="dialog" aria-modal="true" aria-labelledby="orderTitle"><div class="modal"><h2 id="orderTitle">Valitse heittojärjestys</h2><p>Valitse ensimmäisen legin heittojärjestys. Aloittaja vaihtuu jokaisen legin jälkeen.</p><div id="orderRows" style="display:grid;gap:10px;margin:14px 0"></div><div id="orderError" class="notice hidden"></div><div class="row"><button type="button" class="btn btn-secondary" id="cancelOrder">Peruuta</button><button type="button" class="btn btn-primary" id="confirmOrder">Aloita ottelu</button></div></div></div>
 <div class="modal-backdrop hidden" id="leaveConfirm" role="dialog" aria-modal="true" aria-labelledby="leaveConfirmTitle"><div class="modal"><h2 id="leaveConfirmTitle">Poistutaanko kirjauksesta?</h2><p>Haluatko varmasti poistua kirjauksesta ja palata aulaan?</p><div class="row"><button type="button" class="btn btn-secondary" id="cancelLeave">Jatka peliä</button><button type="button" class="btn btn-danger" id="confirmLeave">Poistu aulaan</button></div></div></div>
-<div class="result-overlay hidden" id="resultOverlay" role="dialog" aria-modal="true" aria-labelledby="resultTitle"><div class="result-dialog"><h2 id="resultTitle">🏆 Ottelu päättyi</h2><div class="result-subtitle" id="resultSubtitle"></div><div id="resultDetails"></div><div class="row" style="margin-top:18px"><button class="btn btn-secondary" id="closeResults">Sulje</button><button class="btn btn-primary" id="resultsLobby">Takaisin aulaan</button></div></div></div>
+<div class="result-overlay hidden" id="resultOverlay" role="dialog" aria-modal="true" aria-labelledby="resultTitle"><div class="result-dialog"><h2 id="resultTitle">🏆 Ottelu päättyi</h2><div class="result-subtitle" id="resultSubtitle"></div><div class="result-tabs" role="tablist" aria-label="Ottelun tulokset"><button type="button" class="result-tab active" id="resultSummaryTab" role="tab" aria-selected="true" aria-controls="resultSummaryPanel">Yhteenveto</button><button type="button" class="result-tab" id="resultLegsTab" role="tab" aria-selected="false" aria-controls="resultLegsPanel">Legien tulokset</button></div><div id="resultDetails"><section id="resultSummaryPanel" role="tabpanel" aria-labelledby="resultSummaryTab"></section><section id="resultLegsPanel" role="tabpanel" aria-labelledby="resultLegsTab" hidden></section></div><div class="row" style="margin-top:18px"><button class="btn btn-secondary" id="closeResults">Sulje</button><button class="btn btn-primary" id="resultsLobby">Takaisin aulaan</button></div></div></div>
 <div class="footer">Lieksalaskuri · Ottelu säilyy tämän välilehden uudelleenlatauksessa.</div>
 </main>
 
@@ -950,6 +953,17 @@ function runBotRecorded(action){
 // A leg is planned once, so the *actual* three-dart leg average remains
 // within 20% of the bot's handicap target (including checkout darts).
 // Each ordinary visit is still a legal score and the final visit is a double.
+document.addEventListener('click',event=>{
+ const btn=event.target.closest('button[data-step-target]');
+ if(!btn)return;
+ const input=document.getElementById(btn.dataset.stepTarget);
+ if(!input)return;
+ const min=Number(input.min||0),max=Number(input.max||99);
+ const current=input.value.trim()===''?Number(input.placeholder||min):Number(input.value);
+ input.value=String(Math.max(min,Math.min(max,current+Number(btn.dataset.step))));
+ input.dispatchEvent(new Event('input',{bubbles:true}));
+ input.dispatchEvent(new Event('change',{bubbles:true}));
+});
 function botPreparePacedLeg(p){
  if(p.botPacedLeg && p.botPacedLeg.start===p.startScore)return p.botPacedLeg;
  const start=p.startScore||501,target=botAverage(p.handicap);
@@ -963,18 +977,38 @@ function botPreparePacedLeg(p){
  // treble or bull attempt on the preceding visit, leaving a new checkout.
  // Every template contains exactly one last checkout visit.
  const routes=[
-  {before:40,finish:40,setup:[],minFinish:1,weight:2},
-  {before:32,finish:32,setup:[],minFinish:1,weight:3},
-  {before:36,finish:36,setup:[],minFinish:1,weight:3},
-  {before:24,finish:24,setup:[],minFinish:1,weight:2},
-  {before:16,finish:16,setup:[],minFinish:1,weight:2},
-  {before:50,finish:50,setup:[],minFinish:1,weight:2},
-  {before:87,finish:87,setup:[],minFinish:2,weight:3}, // T17 D18
+  {before:40,finish:40,setup:[],minFinish:1,weight:1},
+  {before:32,finish:32,setup:[],minFinish:1,weight:5},
+  {before:36,finish:36,setup:[],minFinish:1,weight:4},
+  {before:24,finish:24,setup:[],minFinish:1,weight:4},
+  {before:16,finish:16,setup:[],minFinish:1,weight:4},
+  // At 50 prefer a single to leave a double, not an immediate bull attempt.
+  {before:50,finish:32,setup:[18],minFinish:1,weight:8}, // S18 D16
+  {before:50,finish:40,setup:[10],minFinish:1,weight:5}, // S10 D20
+  {before:50,finish:24,setup:[26],minFinish:1,weight:2}, // S18 S8 D12 across visits
+  {before:50,finish:50,setup:[],minFinish:1,weight:.12}, // rare bull checkout
+  // A double attempt can hit the single or neighbouring single segment.
+  // The next visit then targets the newly available double.
+  {before:32,finish:16,setup:[16],minFinish:1,weight:8}, // D16 -> S16, then D8
+  {before:32,finish:8,setup:[24],minFinish:1,weight:4}, // D16 -> S8 + S16, then D4
+  {before:32,finish:4,setup:[28],minFinish:1,weight:3}, // D16 -> S16 + S12, then D2
+  {before:40,finish:20,setup:[20],minFinish:1,weight:5}, // D20 -> S20, then D10
+  {before:40,finish:10,setup:[30],minFinish:1,weight:3}, // D20 -> S20 + S10, then D5
+  {before:36,finish:18,setup:[18],minFinish:1,weight:6}, // D18 -> S18, then D9
+  {before:24,finish:12,setup:[12],minFinish:1,weight:5}, // D12 -> S12, then D6
+  {before:16,finish:8,setup:[8],minFinish:1,weight:5}, // D8 -> S8, then D4
+  {before:28,finish:14,setup:[14],minFinish:1,weight:4}, // D14 -> S14, then D7
+  {before:20,finish:20,setup:[],minFinish:1,weight:3}, // D10
+  {before:28,finish:28,setup:[],minFinish:1,weight:3}, // D14
+  {before:48,finish:48,setup:[],minFinish:2,weight:3}, // S16 D16
+  {before:44,finish:44,setup:[],minFinish:2,weight:3}, // S12 D16
+  {before:52,finish:52,setup:[],minFinish:2,weight:3}, // S20 D16
+  {before:87,finish:87,setup:[],minFinish:2,weight:1}, // T17 D18
   {before:81,finish:81,setup:[],minFinish:2,weight:2}, // T19 D12
-  {before:100,finish:100,setup:[],minFinish:2,weight:3}, // T20 D20
-  {before:121,finish:121,setup:[],minFinish:3,weight:2}, // T20 T11 D14
-  {before:120,finish:120,setup:[],minFinish:3,weight:2}, // T20 S20 D20
-  {before:110,finish:110,setup:[],minFinish:2,weight:2}, // T20 bull
+  {before:100,finish:100,setup:[],minFinish:2,weight:1}, // T20 D20
+  {before:121,finish:121,setup:[],minFinish:3,weight:1}, // T20 T11 D14
+  {before:120,finish:120,setup:[],minFinish:3,weight:1}, // T20 S20 D20
+  {before:110,finish:110,setup:[],minFinish:2,weight:1}, // T20 bull
   {before:90,finish:90,setup:[],minFinish:2,weight:2}, // T20 D15
   {before:64,finish:64,setup:[],minFinish:2,weight:2}, // T16 D8
   {before:68,finish:68,setup:[],minFinish:2,weight:2}, // T20 D4
@@ -1005,14 +1039,22 @@ function botPreparePacedLeg(p){
  for(let d=minD;d<=maxD;d++){
   const full=Math.ceil(d/3)-1,finishD=d-full*3;
   for(const route of routes){
-   const scoringTurns=full-route.setup.length;
+   for(let missTurns=0;missTurns<=Math.min(2,full-route.setup.length);missTurns++){
+   const scoringTurns=full-route.setup.length-missTurns;
    if(scoringTurns<0||finishD<route.minFinish)continue;
    const need=start-route.before;
    if(need<0||!reachable[scoringTurns]?.has(need))continue;
    const repeat=recent.filter(x=>x===d).length;
    const near=recent.filter(x=>Math.abs(x-d)===1).length;
-   const w=Math.exp(-.5*((d-desired)/spread)**2)*(.2**repeat)*(.85**near)*route.weight;
-   choices.push({d,finishD,scoringTurns,route,need,w});
+   // Full 0-point visits represent three missed darts at a double.
+   // More misses require stronger scoring earlier in the leg.
+   const missPreference=[.68,.29,.03][missTurns];
+   const finishBias=finishD===1?.48:finishD===2?1.15:1.4;
+   const highCheckout=route.finish>100?.20:route.finish>80?.38:1;
+   const w=Math.exp(-.5*((d-desired)/spread)**2)*(.2**repeat)*(.85**near)*
+    route.weight*missPreference*finishBias*highCheckout;
+   choices.push({d,finishD,scoringTurns,missTurns,route,need,w});
+   }
   }
  }
  if(!choices.length)return null;
@@ -1031,7 +1073,7 @@ function botPreparePacedLeg(p){
   visits.push(pick);toScore-=pick;
  }
  if(toScore!==0)return null;
- visits.push(...chosen.route.setup);
+ visits.push(...chosen.route.setup,...Array(chosen.missTurns).fill(0));
  p.botRecentLegLengths=[...recent.slice(-2),chosen.d];
  p.botPacedHistory={darts:hist.darts+chosen.d,legs:hist.legs+1};
  p.botPacedLeg={start,visits,finishD:chosen.finishD,finishScore:chosen.route.finish,
@@ -1220,7 +1262,36 @@ function showResults(){
  }else{
    legRows=wonLegs.map((leg,index)=>legRow(leg,`Legi ${leg.legNumber??index+1}`)).join('');
  }
- $('resultDetails').innerHTML=`<table class="result-table"><thead><tr><th>Pelaaja</th>${state.setsToWin>0?'<th>Setit</th>':''}<th>Erät</th><th>3 tikan ka.</th><th>Ens 9 ka.</th></tr></thead><tbody>${playerRows}</tbody></table><h3 style="margin:22px 0 8px;font-size:16px">Legien tulokset</h3><table class="result-table leg-results-table"><thead><tr><th>Legi</th><th>Voittaja</th><th>Tikat</th><th>3 tikan ka.</th><th>Poikkaisu</th></tr></thead><tbody>${legRows}</tbody></table>`;
+ // Each scoring visit is counted exactly once in its own range.
+ // 60+: 60–79, 80+: 80–99, 100+: 100–139, 140: 140–179, 180: exactly 180.
+ const scoreCounts=state.players.map(p=>{
+   const counts=[0,0,0,0,0];
+   (p.history||[]).forEach(h=>{
+     if(h.bust||h.tieBreak)return;
+     const score=Number(h.score);
+     if(!Number.isFinite(score))return;
+     if(score===180)counts[4]++;
+     else if(score>=140)counts[3]++;
+     else if(score>=100)counts[2]++;
+     else if(score>=80)counts[1]++;
+     else if(score>=60)counts[0]++;
+   });
+   return `<tr><td>${escapeHtml(p.name)}</td>${counts.map(n=>`<td>${n}</td>`).join('')}</tr>`;
+ }).join('');
+ $('resultSummaryPanel').innerHTML=`<table class="result-table"><thead><tr><th>Pelaaja</th>${state.setsToWin>0?'<th>Setit</th>':''}<th>Erät</th><th>3 tikan ka.</th><th>Ens 9 ka.</th></tr></thead><tbody>${playerRows}</tbody></table><h3 class="result-stat-heading">Heitetyt tulokset</h3><table class="result-table result-score-counts"><thead><tr><th>Pelaaja</th><th>60+</th><th>80+</th><th>100+</th><th>140</th><th>180</th></tr></thead><tbody>${scoreCounts}</tbody></table>`;
+ $('resultLegsPanel').innerHTML=`<table class="result-table leg-results-table"><thead><tr><th>Legi</th><th>Voittaja</th><th>Tikat</th><th>3 tikan ka.</th><th>Poikkaisu</th></tr></thead><tbody>${legRows}</tbody></table>`;
+ function selectResultTab(which){
+   const legs=which==='legs';
+   $('resultSummaryPanel').hidden=legs;
+   $('resultLegsPanel').hidden=!legs;
+   $('resultSummaryTab').classList.toggle('active',!legs);
+   $('resultLegsTab').classList.toggle('active',legs);
+   $('resultSummaryTab').setAttribute('aria-selected',String(!legs));
+   $('resultLegsTab').setAttribute('aria-selected',String(legs));
+ }
+ $('resultSummaryTab').onclick=()=>selectResultTab('summary');
+ $('resultLegsTab').onclick=()=>selectResultTab('legs');
+ selectResultTab('summary');
  $('resultDetails').querySelectorAll('[data-leg-toggle]').forEach(row=>{
    const toggle=()=>{
      const detail=$('resultDetails').querySelector(`[data-leg-detail="${row.dataset.legToggle}"]`);
@@ -1355,7 +1426,8 @@ function render(){
  board.style.setProperty('--opponents',String(Math.max(1,state.players.length-1)));
  const ordered=multi?[...Array.from({length:state.players.length},(_,offset)=>(state.turnOrder||state.players.map((_,i)=>i))[((state.turnOrder||state.players.map((_,i)=>i)).indexOf(state.current)+offset)%state.players.length])]:state.players.map((_,i)=>i);
  const currentTieLimit=effectiveTieBreakDarts();
- board.innerHTML=ordered.map(i=>{const p=state.players[i],active=i===state.current&&!finished(),mini=multi&&i!==state.current,avg=p.darts?(p.pointsScored/p.darts*3).toFixed(2):'—',legAvg=(p.legDarts||0)>0?(((p.startScore??state.startScore)-p.remaining)/(p.legDarts||1)*3).toFixed(2):'0.00';const stats=[];if(scoreStatEnabled('statLegDarts'))stats.push(`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`);if(scoreStatEnabled('statPrevious')){const prev=(p.history||[]).filter(h=>!h.tieBreak).slice(-1)[0];stats.push(`Edellinen <b>${prev?(prev.bust?'BUST':prev.score):'—'}</b>`)}if(scoreStatEnabled('statMatchAvg'))stats.push(`ka. <b>${avg}</b>`);if(scoreStatEnabled('statFirst9'))stats.push(`9 tik. ka. <b>${firstNineAverage(p)}</b>`);if(scoreStatEnabled('statLegAvg'))stats.push(`Erän ka. <b>${legAvg}</b>`);return `<article class="player-card ${active?'active':''} ${mini?'mini':''}"><div class="pname" title="${escapeHtml(p.name)}">${escapeHtml(p.name)}${p.isBot?' 🤖':''}</div>${state.setsToWin>0?`<strong class="${mini?'mini-sets':'main-sets'}" title="Voitetut setit">${p.sets||0}</strong>`:''}${mini?"":`<strong class="main-legs" title="Voitetut erät">${p.legs}</strong>`}<button type="button" class="remaining score-edit-trigger ${editPlayerIndex===i?'editing':''}" data-edit-player="${i}" title="Muokkaa edellistä heittovuoroa">${p.remaining}</button>${mini?`<strong class="mini-legs" title="Erävoitot">${p.legs}</strong>${`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}" style="display:block">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`}`:`<div class="stats"><span class="average-line">${stats.join(' / ')}</span></div>`}</article>`;}).join('');
+ const legStarter=(state.turnOrder||state.players.map((_,i)=>i))[(state.legIndex||0)%state.players.length];
+ board.innerHTML=ordered.map(i=>{const p=state.players[i],active=i===state.current&&!finished(),mini=multi&&i!==state.current,avg=p.darts?(p.pointsScored/p.darts*3).toFixed(2):'—',legAvg=(p.legDarts||0)>0?(((p.startScore??state.startScore)-p.remaining)/(p.legDarts||1)*3).toFixed(2):'0.00';const stats=[];if(scoreStatEnabled('statLegDarts'))stats.push(`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`);if(scoreStatEnabled('statPrevious')){const prev=(p.history||[]).filter(h=>!h.tieBreak).slice(-1)[0];stats.push(`Edellinen <b>${prev?(prev.bust?'BUST':prev.score):'—'}</b>`)}if(scoreStatEnabled('statMatchAvg'))stats.push(`ka. <b>${avg}</b>`);if(scoreStatEnabled('statFirst9'))stats.push(`9 tik. ka. <b>${firstNineAverage(p)}</b>`);if(scoreStatEnabled('statLegAvg'))stats.push(`Erän ka. <b>${legAvg}</b>`);return `<article class="player-card ${active?'active':''} ${mini?'mini':''}"><div class="pname ${i===legStarter?'leg-starter':''}" title="${escapeHtml(p.name)}">${escapeHtml(p.name)}${p.isBot?' 🤖':''}</div>${state.setsToWin>0?`<strong class="${mini?'mini-sets':'main-sets'}" title="Voitetut setit">${p.sets||0}</strong>`:''}${mini?"":`<strong class="main-legs" title="Voitetut erät">${p.legs}</strong>`}<button type="button" class="remaining score-edit-trigger ${editPlayerIndex===i?'editing':''}" data-edit-player="${i}" title="Muokkaa edellistä heittovuoroa">${p.remaining}</button>${mini?`<strong class="mini-legs" title="Erävoitot">${p.legs}</strong>${`<span class="leg-darts ${currentTieLimit&&currentTieLimit-(p.legDarts||0)<=3?'tie-low':''}" style="display:block">${currentTieLimit?Math.max(0,currentTieLimit-(p.legDarts||0)):(p.legDarts||0)}d</span>`}`:`<div class="stats"><span class="average-line">${stats.join(' / ')}</span></div>`}</article>`;}).join('');
  const tie=state.tieShootout;
  const tieScores=state.pendingLegConfirmation?.tieScores;
  const tieOrder=state.pendingLegConfirmation?.tieOrder;
